@@ -5,31 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/03 18:13:25 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/02/03 20:20:15 by oel-mado         ###   ########.fr       */
+/*   Created: 2025/02/06 00:38:22 by oel-mado          #+#    #+#             */
+/*   Updated: 2025/02/06 00:53:12 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void s_init(char **arr, t_list *a)
+t_list *s_make(char **arg)
 {
 	int i;
-	int j;
-	bool s;
+	t_list *head;
+	t_list *lst;
+	t_list *neo;
 
-	i = 0;
-	j = 0;
-	while (arr[i])
+	i = 1;
+	head->content = ft_atoi(arg[i]);
+	lst = head;
+	while (arg[i])
 	{
-		while (arr[i][j])
-		{
-			s = ft_isdigit(arr[i][j]);
-			if (s != 0)
-			{
-				ft_printf();
-			}
-		}
+		neo = ft_lstnew(arg[i]);
+		lst->next = neo;
+		lst = lst->next;
 		i++;
 	}
+	lst->next = NULL;
+	return (head);
 }

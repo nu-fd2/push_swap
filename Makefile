@@ -6,7 +6,7 @@
 #    By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/03 15:45:26 by oel-mado          #+#    #+#              #
-#    Updated: 2025/02/03 20:56:48 by oel-mado         ###   ########.fr        #
+#    Updated: 2025/02/06 00:41:51 by oel-mado         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,11 +31,22 @@ all:
 ⠀⠀⠀⠀⠀⠸⡆⠛⠇⢀⡀⠀⡇⠀⠀⡞⠀⠀⣸⠟⡊⠁⠚⠌⠀⠀⠀⠀\n\
 ⠀⠀⠀⠀⠀⠀⡍⠨⠊⣒⠴⠀⡇⡴⠋⡋⢐⠐⠅⡀⠐⢠⠕⠂⢂⠀⠀⠀\033[0m"
 
+fp:
+	make -C ft_printf re
+
+lb:
+	make -C libft re
+	make -C libft bonus
+
 clean:
 	rm -f $(OBJ)
+	make -C ft_printf clean
+	make -C libft clean
 
 fclean: clean
 	rm -f $(NAME)
+	make -C ft_printf fclean
+	make -C libft fclean
 
 re: fclean all
 

@@ -1,42 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   args_isdigit.c                                     :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/03 18:13:25 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/02/06 18:31:59 by oel-mado         ###   ########.fr       */
+/*   Created: 2025/02/06 11:45:11 by oel-mado          #+#    #+#             */
+/*   Updated: 2025/02/06 14:15:34 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	args_int(char **arg)
+int	main(int argc, char **argv)
 {
-	int		i;
-	int		j;
-	bool	s;
-
-	i = 1;
-	j = 0;
-	if (arg == NULL)
-		return (1);
-	while (arg[i])
+	char *s = malloc(2);
+	t_list *lst;
+	if (argc == 1)
+		osaka();
+	s[0] = 'n';
+	s[1] = '\0';
+	ft_printf("%d\n", args_int(argv));
+	lst = make_a(argv);
+	if (!lst)
 	{
-		while (arg[i][j])
-		{
-			s = ft_isdigit(arg[i][j]);
-			if (s != 1)
-			{
-				ft_printf("\033[1;31my ar u zo fa9in chtoupid u fakin ni9gr o_O\033[0m\n");
-				return (1);
-			}
-			j++;
-		}
-		j = 0;
-		i++;
+		osaka();
+		return (0);
 	}
-	ft_printf("\033[1;32m9on9ratulaychnz! :D\033[0m\n");
-	return (0);
+	lst_print(lst);
+	ft_printf("\033[1;32mGG\033[0m\n");
+	return (argc);
 }

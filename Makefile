@@ -6,13 +6,17 @@
 #    By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/03 15:45:26 by oel-mado          #+#    #+#              #
-#    Updated: 2025/02/06 00:41:51 by oel-mado         ###   ########.fr        #
+#    Updated: 2025/02/06 13:00:21 by oel-mado         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-CFLAGS = -Wall -Wextra -Werror
+FP = ft_printf/libftprintf.a
+
+LB = libft/libft.a
+
+CFLAGS = -fsanitize=address -g -Wall -Wextra -Werror
 
 all:
 	@echo "\033[1;31m\
@@ -37,6 +41,9 @@ fp:
 lb:
 	make -C libft re
 	make -C libft bonus
+
+m:
+	cc $(CFLAGS) main.c s_init.c shit.c args_isdigit.c $(FP) $(LB)
 
 clean:
 	rm -f $(OBJ)

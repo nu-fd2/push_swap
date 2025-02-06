@@ -6,28 +6,43 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 00:38:22 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/02/06 00:53:12 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/02/06 18:52:58 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list *s_make(char **arg)
+void clr(void *tata)
 {
-	int i;
+	ft_bzero(tata, 4);
+}
+
+t_list *make_a(char **arg)
+{
+	int i = 1;
+	int data;
 	t_list *head;
 	t_list *lst;
 	t_list *neo;
 
-	i = 1;
-	head->content = ft_atoi(arg[i]);
-	lst = head;
-	while (arg[i])
+	if (!arg || !arg[1])
+		return (NULL);
+	data = ft_atoi(arg[i]);
+	lst = ft_lstnew((void *)(long)data);
+	if (!lst)
+		return (NULL);
+	head = lst;
+	while (arg[++i])
 	{
-		neo = ft_lstnew(arg[i]);
+		data = ft_atoi(arg[i]);
+		neo = ft_lstnew((void *)(long)data); 
+		if (!neo)
+		{
+			ft_lstclear(&head, clr);
+			return (NULL);
+		}
 		lst->next = neo;
 		lst = lst->next;
-		i++;
 	}
 	lst->next = NULL;
 	return (head);

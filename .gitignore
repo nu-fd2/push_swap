@@ -3,8 +3,9 @@
 *.out
 *.swp
 *.gch
+*.json
 client
 server
-.vscode
+.vscode/
 .DS_Store
 me

@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 15:45:36 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/02/07 17:09:49 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/02/10 06:18:47 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,14 @@ t_list	*make_b(int argc);
 void	clr(void *tata);
 void    print_msg(int msg, bool s);
 int		arg_check(char **av);
+
+typedef struct s_stack
+{
+	int				data;
+	bool			is_head;
+	bool			is_null;
+	struct s_stack	*next;
+}					t_stack;
 
 // some shit functions
 void	lst_print(t_list *head);

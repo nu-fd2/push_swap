@@ -6,25 +6,24 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 00:38:22 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/02/06 18:52:58 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/02/07 10:29:08 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void clr(void *tata)
+void	clr(void *tata)
 {
 	ft_bzero(tata, 4);
 }
 
-t_list *make_a(char **arg)
+t_list	*make_a(char **arg)
 {
-	int i = 1;
-	int data;
-	t_list *head;
-	t_list *lst;
-	t_list *neo;
+	int	i;
+	int	data;
 
+	i = 1;
+	t_list(*head), (*lst), (*neo);
 	if (!arg || !arg[1])
 		return (NULL);
 	data = ft_atoi(arg[i]);
@@ -35,7 +34,7 @@ t_list *make_a(char **arg)
 	while (arg[++i])
 	{
 		data = ft_atoi(arg[i]);
-		neo = ft_lstnew((void *)(long)data); 
+		neo = ft_lstnew((void *)(long)data);
 		if (!neo)
 		{
 			ft_lstclear(&head, clr);
@@ -44,6 +43,31 @@ t_list *make_a(char **arg)
 		lst->next = neo;
 		lst = lst->next;
 	}
-	lst->next = NULL;
+	return (lst->next = NULL, head);
+}
+
+t_list	*make_b(int argc)
+{
+	int	i;
+
+	t_list(*head), (*lst), (*neo);
+	if (!argc)
+		return (NULL);
+	lst = ft_lstnew(NULL);
+	if (!lst)
+		return (NULL);
+	head = lst;
+	i = 1;
+	while (++i < argc)
+	{
+		neo = ft_lstnew(NULL);
+		if (!neo)
+		{
+			ft_lstclear(&head, clr);
+			return (NULL);
+		}
+		lst->next = neo;
+		lst = lst->next;
+	}
 	return (head);
 }

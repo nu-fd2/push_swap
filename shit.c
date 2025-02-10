@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 11:41:32 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/02/06 12:02:35 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/02/07 17:18:49 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,27 @@
 
 void lst_print(t_list *head)
 {
-	int *data;
+	int data;
+	int size;
 
+	size = 0;
 	if (!head)
 		ft_printf("\033[1;31mhead 5awi a zmr\033[0m\n");
 	while (head)
 	{
-		data = head->content;
-		ft_printf("\033[1;33m%d\033[0m", data);
-		ft_printf("->");
+		size++;
+		data = (int)head->content;
+		if (data == 0)
+            ft_printf("\033[1;31m%d\033[0m", 0);
+        else if (data < 0)
+            ft_printf("\033[4;1;34m%d\033[0m", data);
+		else
+			ft_printf("\033[1;36m%d\033[0m", data);
+		ft_printf("\033[1;37m->\033[0m");
 		head = head->next;
 	}
-	ft_printf("\033[1;35mNULL\033[0m\n");
+	ft_printf("\033[1;35mNULL\033[0m");
+	ft_printf("\033[1;33m %d\033[0m\n", size);
 }
 
 void	osaka()
@@ -55,4 +64,23 @@ void	osaka()
 			total_read++;
 		}
 	}
+}
+
+void print_msg(int msg, bool s)
+{
+	if (msg == 0)
+		ft_printf("\033[1;31mError: msg = 0\033[0m\n");
+	else if (msg == 1)
+		ft_printf("\033[1;31my ar u zo fa9in chtoupid u fakin ni9gr o_O\033[0m\n");
+	else if (msg == 2)
+		ft_printf("\033[1;32m9on9ratulaychnz! :D\033[0m\n");
+	else if (msg == 3)
+		ft_printf("\033[1;31mamogus?!\033[0m\n");
+	else if (msg == 4)
+		ft_printf("\033[1;31mError: epty str\033[0m\n");
+	// else if (msg == 5)
+	else
+		ft_printf("\033[1;31mmsg makaynx?! 🤨\033[0m\n");
+	if (s)
+		exit(1);
 }

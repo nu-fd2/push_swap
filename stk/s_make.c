@@ -6,18 +6,13 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 00:38:22 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/02/07 10:29:08 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/02/11 20:49:20 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	clr(void *tata)
-{
-	ft_bzero(tata, 4);
-}
-
-t_list	*make_a(char **arg)
+t_list	*s_make(char **arg)
 {
 	int	i;
 	int	data;

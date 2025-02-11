@@ -6,13 +6,13 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 11:41:32 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/02/07 17:18:49 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/02/11 17:14:13 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void lst_print(t_list *head)
+void lst_print(t_stack *head)
 {
 	int data;
 	int size;
@@ -23,7 +23,7 @@ void lst_print(t_list *head)
 	while (head)
 	{
 		size++;
-		data = (int)head->content;
+		data = (int)head->data;
 		if (data == 0)
             ft_printf("\033[1;31m%d\033[0m", 0);
         else if (data < 0)

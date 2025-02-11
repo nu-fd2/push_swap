@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 11:45:11 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/02/10 05:45:49 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/02/10 06:22:11 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int	main(int argc, char **argv)
 {
 	t_list *lst;
 	t_list *lst2;
+
 	if (argc == 1)
 	{
 		osaka();

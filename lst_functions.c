@@ -1,17 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   lst_functions.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/03 15:45:31 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/02/15 19:27:00 by oel-mado         ###   ########.fr       */
+/*   Created: 2024/11/09 14:28:28 by oel-mado          #+#    #+#             */
+/*   Updated: 2025/02/10 22:54:26 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int ac, char **av)
+t_stack	*ft_stacknew(int data)
 {
+	t_stack	*new;
+
+	new = malloc(sizeof(t_stack));
+	if (!new)
+		return (NULL);
+	new->data = data;
+	new->next = NULL;
+	return (new);
 }
+
+void	ft_del(t_stack **lst)
+{
+	t_stack	*fr;
+	t_stack	*nxt;
+
+	if (!lst || !(*lst))
+		return ;
+	nxt = *lst;
+	while (nxt)
+	{
+		fr = nxt;
+		nxt->data = 0;
+		nxt->is_null = 0;
+		nxt = nxt->next;
+		free (fr);
+	}
+	*lst = NULL;
+}
+

@@ -6,7 +6,11 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 11:45:11 by oel-mado          #+#    #+#             */
+<<<<<<< HEAD:main/main.c
 /*   Updated: 2025/02/11 17:09:09 by oel-mado         ###   ########.fr       */
+=======
+/*   Updated: 2025/02/10 06:22:11 by oel-mado         ###   ########.fr       */
+>>>>>>> main:main.c
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +18,14 @@
 
 int	main(int argc, char **argv)
 {
+<<<<<<< HEAD:main/main.c
 	t_stack *lst;
 	t_stack *lst2;
+=======
+	t_list *lst;
+	t_list *lst2;
+
+>>>>>>> main:main.c
 	if (argc == 1)
 	{
 		osaka();

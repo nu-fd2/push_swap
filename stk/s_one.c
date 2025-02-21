@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lst_functions.c                                    :+:      :+:    :+:   */
+/*   s_one.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 14:28:28 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/02/11 16:34:59 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/02/21 06:13:17 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../main/push_swap.h"
 
-t_stack	*ft_stacknew(int data)
+t_stack	*s_one(int data)
 {
 	t_stack	*new;
 
@@ -23,23 +23,3 @@ t_stack	*ft_stacknew(int data)
 	new->next = NULL;
 	return (new);
 }
-
-void	ft_del(t_stack **lst)
-{
-	t_stack	*fr;
-	t_stack	*nxt;
-
-	if (!lst || !(*lst))
-		return ;
-	nxt = *lst;
-	while (nxt)
-	{
-		fr = nxt;
-		nxt->data = 0;
-		nxt->is_null = 0;
-		nxt = nxt->next;
-		free (fr);
-	}
-	*lst = NULL;
-}
-

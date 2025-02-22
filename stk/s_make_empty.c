@@ -1,66 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   s_make.c                                           :+:      :+:    :+:   */
+/*   s_make_empty.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 00:38:22 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/02/21 06:12:55 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/02/22 22:53:58 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../main/push_swap.h"
 
-t_list	*s_make(char **arg)
-{
-	int	i;
-	int	data;
-
-	i = 1;
-	t_list(*head), (*lst), (*neo);
-	if (!arg || !arg[1])
-		return (NULL);
-	data = ft_atoi(arg[i]);
-	lst = ft_lstnew((void *)(long)data);
-	if (!lst)
-		return (NULL);
-	head = lst;
-	while (arg[++i])
-	{
-		data = ft_atoi(arg[i]);
-		neo = ft_lstnew((void *)(long)data);
-		if (!neo)
-		{
-			ft_lstclear(&head, clr);
-			return (NULL);
-		}
-		lst->next = neo;
-		lst = lst->next;
-	}
-	return (lst->next = NULL, head);
-}
-
-t_list	*make_b(int argc)
+t_stack	*s_make_empty(int size)
 {
 	int	i;
 
-	t_list(*head), (*lst), (*neo);
-	if (!argc)
+	t_stack (*head), (*lst), (*neo);
+	if (size <= 0)
 		return (NULL);
-	lst = ft_lstnew(NULL);
+	lst = s_one(0, 1);
 	if (!lst)
 		return (NULL);
 	head = lst;
 	i = 1;
-	while (++i < argc)
+	while (++i < size)
 	{
-		neo = ft_lstnew(NULL);
+		neo = s_one(0, 1);
 		if (!neo)
-		{
-			ft_lstclear(&head, clr);
-			return (NULL);
-		}
+			return (s_free(&head), NULL);
 		lst->next = neo;
 		lst = lst->next;
 	}

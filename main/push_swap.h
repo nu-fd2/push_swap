@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 15:45:36 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/02/21 06:14:48 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/02/22 22:51:53 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,10 @@ typedef struct s_stack
 	bool			is_null;
 	struct s_stack	*next;
 }					t_stack;
+
+t_stack	*s_make_empty(int size); //tatsn3 stack 5awi
+t_stack	*s_one(int data, bool is_null); //tatalloci l data f node
+void	s_put(int data, t_stack *node); //tat7t data f node
+void	s_free(t_stack **stk); //tat5wi stack w tatfreeyih
 
 #endif // PUSH_SWAP_H

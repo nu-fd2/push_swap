@@ -1,6 +1,6 @@
 *.o
-# *.a
-# *.out
+*.a
+*.out
 *.swp
 *.gch
 *.json

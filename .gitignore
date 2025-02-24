@@ -4,8 +4,6 @@
 *.swp
 *.gch
 *.json
-client
-server
 .vscode/
 .DS_Store
 me

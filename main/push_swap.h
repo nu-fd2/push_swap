@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 15:45:36 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/02/22 22:51:53 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/02/23 18:50:47 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "../ft_printf/src/ft_printf.h"
 # include "../libft/libft.h"
+# include "../chk/check.h"
 # include <stdbool.h>
 # include <fcntl.h>
 

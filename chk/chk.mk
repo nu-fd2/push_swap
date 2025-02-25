@@ -3,8 +3,8 @@ CC = cc -Wall -Wextra -Werror
 
 PRINTF = ../ft_printf/libftprintf.a
 
-all: %.c
-	cc ${PRINTF} $<
+all:
+	cc ${PRINTF} $2
 F:
 	${CC} 
 

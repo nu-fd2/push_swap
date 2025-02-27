@@ -1,7 +1,10 @@
 #!/bin/bash
 
-if [ -z "$1" ]; then
-  echo -e "\033[1;31mno file to test\033[0m"
+# Show the number of arguments passed
+echo -e "\033[1;34mNumber of arguments: $#\033[0m"
+
+if [ $# -lt 1 ]; then
+  echo -e "\033[1;31mNo file to test\033[0m"
   exit 1
 fi
 
@@ -16,35 +19,27 @@ if [ ! -f ../ft_printf/libftprintf.a ]; then
   make -C ../ft_printf clean
 fi
 
-cc $1 ../ft_printf/libftprintf.a -o test.out
+cc "$@" ../ft_printf/libftprintf.a -o test.out || { 
+  echo -e "\033[1;31mCompilation failed\033[0m"
+  exit 1
+}
 
-echo -e "Test 1: \033[1;33m./test.out 56 -7 2 +2\033[0m"
-./test.out 56 -7 2 +2
-echo -e "\033[1;34m-----------------------------------\033[0m"
+run_test() {
+  expected=$1
+  shift
+  echo -e "Test: \033[1;33m./test.out $*\033[0m"
+  ./test.out "$@"
+  if [ $? -eq $expected ]; then
+    echo -e "\033[1;32mOK\033[0m"
+  else
+    echo -e "\033[1;31mOKn't\033[0m"
+  fi
+  echo -e "\033[1;34m-----------------------------------\033[0m"
+}
 
-echo -e "Test 2: \033[1;33m./test.out \"      -1   3 44 +2     \"\033[0m"
-./test.out "      -1   3 44 +2     "
-echo -e "\033[1;34m-----------------------------------\033[0m"
 
-echo -e "Test 3: \033[1;33m./test.out 100 200 300\033[0m"
-./test.out 100 200 300
-echo -e "\033[1;34m-----------------------------------\033[0m"
+run_test 0 1 1 1 1 1 1 1 1
 
-echo -e "Test 4: \033[1;33m./test.out +123 45 -67\033[0m"
-./test.out "+123 45 -67"
-echo -e "\033[1;34m-----------------------------------\033[0m"
-
-echo -e "Test 5: \033[1;33m./test.out -1 3 --\033[0m"
-./test.out -1 3 --
-echo -e "\033[1;34m-----------------------------------\033[0m"
-
-echo -e "Test 6: \033[1;33m./test.out abc 123\033[0m"
-./test.out abc 123
-echo -e "\033[1;34m-----------------------------------\033[0m"
-
-echo -e "Test 7: \033[1;33m./test.out\033[0m"
-./test.out
-echo -e "\033[1;34m-----------------------------------\033[0m"
 
 if [ -f test.out ]; then
   rm test.out

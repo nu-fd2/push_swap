@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 18:13:25 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/02/27 08:59:06 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/02/28 21:03:04 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ int is_it_good(char **arg)
 		tmp = tmp + is_multi_arg(arg[i]) - 1;
 		i++;
 	}
-	i += tmp -1;
-	ft_printf("\033[1;34mtmp = %d\033[0m\n", i);
+	i += tmp - 1;
 	return (i);
 }

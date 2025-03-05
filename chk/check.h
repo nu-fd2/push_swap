@@ -6,12 +6,14 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 18:42:19 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/02 08:38:27 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/05 16:42:56 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHECK_H
 #define CHECK_H
+
+#include <stdbool.h>
 
 # include "../main/push_swap.h"
 

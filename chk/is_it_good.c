@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 18:13:25 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/02/28 21:03:04 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/05 16:45:20 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@ int is_it_good(char **arg)
 		tmp = tmp + is_multi_arg(arg[i]) - 1;
 		i++;
 	}
-	i += tmp - 1;
+	i += tmp;
 	return (i);
 }

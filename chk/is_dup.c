@@ -6,11 +6,11 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 07:46:14 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/02 08:37:13 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/07 22:01:19 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "check.h"
+#include "../push_swap.h"
 
 bool is_dup(long nb, char *arr)
 {

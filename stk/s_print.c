@@ -1,6 +1,6 @@
-#include "../main/push_swap.h"
+#include "../push_swap.h"
 
-void stk_print(t_stack *head)
+void s_print(t_stack *head)
 {
 	int data;
 	int size;

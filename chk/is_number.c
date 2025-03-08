@@ -6,11 +6,11 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 18:40:34 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/02/28 21:04:16 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/07 22:01:48 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "check.h"
+#include "../push_swap.h"
 
 bool skip(char *arg, int i)
 {

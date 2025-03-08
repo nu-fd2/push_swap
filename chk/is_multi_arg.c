@@ -6,12 +6,11 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 01:02:00 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/02/27 07:46:58 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/07 22:01:44 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "check.h"
-
+#include "../push_swap.h"
 int is_multi_arg(char *arg)
 {
 	int i;

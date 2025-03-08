@@ -1,32 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   s_put.c                                            :+:      :+:    :+:   */
+/*   s_atoi.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/22 19:00:29 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/08 09:52:28 by oel-mado         ###   ########.fr       */
+/*   Created: 2024/10/25 18:10:01 by oel-mado          #+#    #+#             */
+/*   Updated: 2025/03/08 04:16:12 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-t_stack	*s_put(int *arr, t_stack *node, int size)
+long	s_atoi(const char *str)
 {
+	int		sg;
+	long	nb;
 	int		i;
-	t_stack *head;
 
 	i = 0;
-	head = node;
-	while (i < size)
+	sg = 1;
+	nb = 0;
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	if (str[i] == '-' || str[i] == '+')
 	{
-		if (!node)
-			return (NULL);
-		if (node->is_null == false)
-			return (NULL);
-		node->data = arr[i];
+		if (str[i] == '-')
+			sg = -sg;
 		i++;
 	}
-	return (head);
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		nb = (nb * 10) + (str[i] - 48);
+		i++;
+	}
+	nb *= sg;
+	if (nb < -2147483648 || nb > 2147483647)
+		return (696969696969);
+	return (nb);
 }

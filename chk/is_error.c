@@ -6,11 +6,11 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 21:01:41 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/02/28 21:02:22 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/07 22:01:38 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "check.h"
+#include "../push_swap.h"
 
 void is_error()
 {

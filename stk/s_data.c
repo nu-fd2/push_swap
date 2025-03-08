@@ -1,32 +1,55 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   s_put.c                                            :+:      :+:    :+:   */
+/*   s_data.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/22 19:00:29 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/08 09:52:28 by oel-mado         ###   ########.fr       */
+/*   Created: 2025/03/05 17:11:55 by oel-mado          #+#    #+#             */
+/*   Updated: 2025/03/08 08:23:08 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-t_stack	*s_put(int *arr, t_stack *node, int size)
+bool is_it_there(int data, int *arr, int in)
 {
-	int		i;
-	t_stack *head;
+	int i;
 
 	i = 0;
-	head = node;
-	while (i < size)
+	while (i < in)
 	{
-		if (!node)
-			return (NULL);
-		if (node->is_null == false)
-			return (NULL);
-		node->data = arr[i];
+		if (data == arr[i])
+			return (1);
 		i++;
 	}
-	return (head);
+	return (0);
+}
+
+int *s_data(char **av, int size)
+{
+	int		i;
+	int		*arr;
+	long	data;
+
+	i = 0;
+	data = 0;
+	arr = ft_calloc(size, 4);
+	while (i < size)
+	{
+		data = s_atoi(av[i]);
+		if (data == 696969696969)
+		{
+			free(arr);
+			is_error();
+		}
+		if (is_it_there((int)data, arr, i) == 1)
+		{
+			free(arr);
+			is_error();
+		}
+		arr[i] = (int)data;
+		i++;
+	}
+	return (arr);
 }

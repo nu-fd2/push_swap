@@ -6,11 +6,11 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 00:38:22 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/02/22 22:53:58 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/08 09:51:20 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../main/push_swap.h"
+#include "../push_swap.h"
 
 t_stack	*s_make_empty(int size)
 {
@@ -28,7 +28,7 @@ t_stack	*s_make_empty(int size)
 	{
 		neo = s_one(0, 1);
 		if (!neo)
-			return (s_free(&head), NULL);
+			return (s_free(head), NULL);
 		lst->next = neo;
 		lst = lst->next;
 	}

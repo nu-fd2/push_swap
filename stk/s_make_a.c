@@ -1,26 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check.h                                            :+:      :+:    :+:   */
+/*   s_make_a.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/23 18:42:19 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/05 16:42:56 by oel-mado         ###   ########.fr       */
+/*   Created: 2025/02/22 22:54:30 by oel-mado          #+#    #+#             */
+/*   Updated: 2025/03/08 09:43:57 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECK_H
-#define CHECK_H
+#include "../push_swap.h"
 
-#include <stdbool.h>
+t_stack *s_make_a(char **av, int size)
+{
+	int 	*arr;
+	int 	i;
+	t_stack *a;
+	t_stack *head;
 
-# include "../main/push_swap.h"
+	i = 0;
+	arr = s_data(av, size);
+	a = s_make_empty(size);
+	head = s_put(arr, a, size);
+	if (!head)
+	{
+		free(arr);
+		s_free(head);
+		is_error();
+	}
+	return (head);
+}
 
-void	is_error();
-bool    is_number(char *arg);
-int		is_it_good(char **arg);
-int		is_multi_arg(char *arg);
-bool    is_dup(long nb, char *arr);
+int main(int ac, char **av)
+{
+	s_print(s_make_a(&av[1], ac - 1));
+}
 
-#endif //CHECK_H

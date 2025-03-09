@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 22:54:30 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/08 09:43:57 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/09 19:41:57 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,13 @@ t_stack *s_make_a(char **av, int size)
 	arr = s_data(av, size);
 	a = s_make_empty(size);
 	head = s_put(arr, a, size);
+	ft_printf("a : ");
+	s_print(a);
 	if (!head)
 	{
 		free(arr);
 		s_free(head);
 		is_error();
 	}
-	return (head);
+	return (a);
 }
-
-int main(int ac, char **av)
-{
-	s_print(s_make_a(&av[1], ac - 1));
-}
-

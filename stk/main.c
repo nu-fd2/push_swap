@@ -3,16 +3,13 @@
 int main(int ac, char **av)
 {
 	int size;
-	int i;
-	int data;
 	t_stack *a;
-	t_stack *b;
 
-	i = 0;
-	data = 0;
-	size = is_it_good(av);
-	a = s_make_in(av, size);
-	b = s_make_empty(size);
-	stk_print(a);
-	stk_print(b);
+	size = is_it_good(av) - 1;
+	a = s_make_a(&av[1], size);
+	ft_printf("size = %d\n", size);
+	ac = size;
+	s_print(a);
+	s_free(a);
+	ac--;
 }

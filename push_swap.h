@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 15:45:36 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/08 09:54:11 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/09 08:36:38 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ t_stack *s_make_a(char **args, int size);
 t_stack	*s_one(int data, bool is_null);
 t_stack	*s_put(int *arr, t_stack *node, int size);
 
-bool is_it_there(int data, int *arr, int in);
 
 void	s_print(t_stack *head); // rm this
 

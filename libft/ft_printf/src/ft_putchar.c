@@ -1,40 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puthex.c                                        :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/24 04:37:09 by oel-mado          #+#    #+#             */
-/*   Updated: 2024/11/24 15:22:40 by oel-mado         ###   ########.fr       */
+/*   Created: 2024/11/24 04:36:36 by oel-mado          #+#    #+#             */
+/*   Updated: 2025/03/14 12:17:29 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../../libft.h"
 
-static int	ft_strlen(const char *who)
+int	ft_putchar(char c)
 {
-	int	ask;
-
-	ask = 0;
-	while (who[ask])
-		ask++;
-	return (ask);
-}
-
-int	ft_puthex(unsigned long n, const char *base)
-{
-	unsigned long	len;
-	int				i;
-
-	len = ft_strlen(base);
-	i = 0;
-	if (n >= len)
-	{
-		i += ft_puthex(n / len, base);
-		i += ft_putchar(base[n % len]);
-	}
-	else
-		i += ft_putchar(base[n]);
-	return (i);
+	write(1, &c, 1);
+	return (1);
 }

@@ -7,7 +7,6 @@ int main(int ac, char **av)
 
 	size = is_it_good(av) - 1;
 	a = s_make_a(&av[1], size);
-	ft_printf("size = %d\n", size);
 	ac = size;
 	s_print(a);
 	s_free(a);

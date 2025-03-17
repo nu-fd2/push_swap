@@ -6,61 +6,85 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 17:11:55 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/09 22:20:57 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/17 07:11:46 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-bool is_it_there(int data, int *arr, int in)
+bool is_it_there(long *arr, int size)
 {
 	int i;
+	int j;
+	long tmp;;
 
 	i = 0;
-	while (i < in)
+	tmp = 0;
+	while (i < size)
 	{
-		if (data == arr[i])
+		tmp = arr[i];
+		if (tmp > 2147483647 || tmp < -2147483648)
 			return (1);
+		j = i + 1;
+		while (j < size)
+		{
+			if (tmp == arr[j])
+				return (1);
+			j++;
+		}
 		i++;
 	}
 	return (0);
 }
 
-int is_it_multi(int data, int *arr, int in)
+long	*s_arav(char **av, int size)
 {
-	int i;
+	long *arr;
 
+	int (i), (j), (k);
+	arr = ft_calloc(size, sizeof(long));
 	i = 0;
-	while (i < in)
+	j = 0;
+	k = 0;
+	while (av[i])
 	{
-		if (data == arr[i])
-			return (1);
+		while (av[i][j])
+		{
+			if (av[i][j] == '-' || av[i][j] == '+' || (av[i][j] <= '9' && av[i][j] >= '0'))
+			{
+				arr[k] = s_atoi(&av[i][j]);
+				k++;
+				if (av[i][j] == '-' || av[i][j] == '+')
+					j++;
+				while (av[i][j] <= '9' && av[i][j] >= '0')
+					j++;
+			}
+			else
+				j++;
+		}
+		j = 0;
 		i++;
 	}
-	return (i);
+	return (arr);
 }
 
-int *s_data(char **av, int size)
+long *s_data(char **av, int size)
 {
 	int		i;
 	int		j;
-	int		*arr;
-	long	data;
+	long	*data;
 
 	i = 0;
 	j = 0;
-	data = 0;
-	arr = ft_calloc(size, 4);
-	ft_printf("arr[0] = %s\n", av[0]);
+	data = s_arav(av, size);
 	while (i < size)
 	{
-		data = s_atoi(av[i]);
-		if (is_it_there((int)data, arr, i) == 1 || data == 696969696969)
+		if (is_it_there(data, size) == 1)
 		{
-			free(arr);
+			free(data);
 			is_error();
 		}
-		i += is_it_multi((int)data, arr, i);
+		i++;
 	}
-	return (arr);
+	return (data);
 }

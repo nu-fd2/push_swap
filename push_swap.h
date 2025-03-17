@@ -6,14 +6,13 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 15:45:36 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/09 08:36:38 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/17 04:31:03 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "ft_printf/src/ft_printf.h"
 # include "libft/libft.h"
 # include <stdbool.h>
 
@@ -30,12 +29,12 @@ typedef struct s_stack
 
 // stk
 long	s_atoi(const char *str);
-int		*s_data(char **av, int size);
+long	*s_data(char **av, int size);
 void	s_free(t_stack *stk);
 t_stack	*s_make_empty(int size);
 t_stack *s_make_a(char **args, int size);
 t_stack	*s_one(int data, bool is_null);
-t_stack	*s_put(int *arr, t_stack *node, int size);
+t_stack	*s_put(long *arr, t_stack *node, int size);
 
 
 void	s_print(t_stack *head); // rm this

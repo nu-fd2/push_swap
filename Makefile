@@ -6,54 +6,44 @@
 #    By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/03 15:45:26 by oel-mado          #+#    #+#              #
-#    Updated: 2025/02/15 19:20:26 by oel-mado         ###   ########.fr        #
+#    Updated: 2025/03/18 05:04:22 by oel-mado         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-FP = ft_printf/libftprintf.a
-
-LB = libft/libft.a
+LIBFT = libft/libft.a
 
 CFLAGS = -Wall -Wextra -Werror
 
-all:
-	@echo "\033[1;31m\
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⣤⣤⣤⣤⣀⡀⠀⠀⠀⠀⠀  ╭────────╮\n\
-⠀⠀⠀⠀⠀⠀⠀⠀⣠⡶⡿⢿⣿⣛⣟⣿⡿⢿⢿⣷⣦⡀⠀⠀⠀ │  OMG!  │\n\
-⠀⠀⠀⠀⠀⠀⢰⣯⣷⣿⣿⣿⢟⠃⢿⣟⣿⣿⣾⣷⣽⣺⢆⠀⠀ ╰────────╯\n\
-⠀⠀⠀⠀⠀⠀⢸⣿⢿⣾⢧⣏⡴⠀⠈⢿⣘⣿⢿⣿⣿⣿⣿⡆⠀ 	\n\
-⠀⠀⠀⠀⠀⠀⢹⣿⢠⡶⠒⢶⠀⠀⣠⠒⠒⠢⡀⢿⣿⣿⣿⡇⠀⠀⠀⠀\n\
-⠀⠀⠀⠀⠀⠀⣿⣿⠸⣄⣠⡾⠀⠀⠻⣀⣀⡼⠁⢸⣿⣿⣿⣿⠀⠀⠀⠀\n\
-⠀⠀⠀⠀⠀⠀⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⠀⠀⠀\n\
-⠀⠀⠀⠀⠀⢰⣿⣿⠀⠀⠀⡔⠢⠤⠔⠒⢄⠀⠀⢸⣿⣿⣿⣿⡇⠀⠀⠀\n\
-⠀⠀⠀⠀⠀⢸⣿⣿⣄⠀⠸⡀⠀⠀⠀⠀⢀⡇⠠⣸⣿⣿⣿⣿⡇⠀⠀⠀\n\
-⠀⠀⠀⠀⠀⢸⣿⣿⣿⣷⣦⣮⣉⢉⠉⠩⠄⢴⣾⣿⣿⣿⣿⡇⠀⠀⠀⠀\n\
-⠀⠀⠀⠀⠀⢸⣿⣿⢻⣿⣟⢟⡁⠀⠀⠀⠀⢇⠻⣿⣿⣿⣿⣿⠀⠀⠀⠀\n\
-⠀⠀⠀⠀⠀⢸⠿⣿⡈⠋⠀⠀⡇⠀⠀⠀⢰⠃⢠⣿⡟⣿⣿⢻⠀⠀⠀⠀\n\
-⠀⠀⠀⠀⠀⠸⡆⠛⠇⢀⡀⠀⡇⠀⠀⡞⠀⠀⣸⠟⡊⠁⠚⠌⠀⠀⠀⠀\n\
-⠀⠀⠀⠀⠀⠀⡍⠨⠊⣒⠴⠀⡇⡴⠋⡋⢐⠐⠅⡀⠐⢠⠕⠂⢂⠀⠀⠀\033[0m"
+SRC = chk/is_error.c\
+	chk/is_it_good.c\
+	chk/is_multi_arg.c\
+	chk/is_number.c\
+	stk/s_data.c\
+	stk/s_make_a.c\
+	stk/s_one.c\
+	stk/s_put.c\
+	stk/s_atoi.c\
+	stk/s_free.c\
+	stk/s_make_empty.c\
+	stk/s_print.c\
+	\
+	\
+	stk/main.c
 
-fp:
-	make -C ft_printf re
+all: $(LIBFT) push_swap.h
+	cc $(CFLAGS) $(SRC) $(LIBFT) -o $(NAME)
 
-lb:
-	make -C libft re
-	make -C libft bonus
-
-m:
-	cc $(CFLAGS) main.c s_init.c shit.c args_isdigit.c $(FP) $(LB)
+$(LIBFT):
+	make -C libft
 
 clean:
-	rm -f $(OBJ)
-	make -C ft_printf clean
 	make -C libft clean
 
-fclean: clean
-	rm -f $(NAME)
-	make -C ft_printf fclean
+fclean:
 	make -C libft fclean
+	rm -f $(NAME)
 
 re: fclean all
 

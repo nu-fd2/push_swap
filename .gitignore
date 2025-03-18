@@ -1,3 +1,4 @@
+me
 *.o
 *.a
 *.out
@@ -5,7 +6,7 @@
 *.gch
 *.json
 *.dSYM
-.vscode/
-.DS_Store
-me
 niggers
+.vscode
+.DS_Store
+push_swap

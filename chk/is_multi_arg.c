@@ -6,16 +6,17 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 01:02:00 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/07 22:01:44 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/18 01:13:15 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-int is_multi_arg(char *arg)
+
+int	is_multi_arg(char *arg)
 {
-	int i;
-	int nb;
-	bool s;
+	int		i;
+	int		nb;
+	bool	s;
 
 	i = 0;
 	s = 0;

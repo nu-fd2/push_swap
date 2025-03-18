@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 15:45:36 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/17 04:31:03 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/18 02:30:30 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ t_stack	*s_make_empty(int size);
 t_stack *s_make_a(char **args, int size);
 t_stack	*s_one(int data, bool is_null);
 t_stack	*s_put(long *arr, t_stack *node, int size);
+void	of_leaks(void);
 
 
 void	s_print(t_stack *head); // rm this
@@ -44,7 +45,6 @@ void	is_error();
 bool    is_number(char *arg);
 int		is_it_good(char **arg);
 int		is_multi_arg(char *arg);
-bool    is_dup(long nb, char *arr);
 
 // mvs
 

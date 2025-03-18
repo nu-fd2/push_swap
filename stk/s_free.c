@@ -6,15 +6,15 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 04:33:50 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/08 09:40:37 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/18 01:25:36 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void s_free(t_stack *stk)
+void	s_free(t_stack *stk)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	if (!stk)
 		return ;

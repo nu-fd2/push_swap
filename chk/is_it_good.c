@@ -6,16 +6,16 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 18:13:25 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/07 22:01:41 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/18 01:13:38 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int is_it_good(char **arg)
+int	is_it_good(char **arg)
 {
-	int i;
-	int tmp;
+	int	i;
+	int	tmp;
 
 	i = 1;
 	tmp = 0;

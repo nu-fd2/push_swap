@@ -6,14 +6,15 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 21:01:41 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/07 22:01:38 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/18 02:04:38 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void is_error()
+void	is_error(void)
 {
 	ft_printf("\033[1;31mError.\033[0m\n");
+	nigger();
 	exit(0);
 }

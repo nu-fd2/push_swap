@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 18:10:01 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/16 20:04:26 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/18 01:47:01 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 long	s_atoi(const char *str)
 {
+	int		i;
 	int		sg;
 	long	nb;
-	int		i;
 
 	i = 0;
 	sg = 1;

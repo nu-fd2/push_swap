@@ -6,13 +6,13 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 18:40:34 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/07 22:01:48 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/18 01:12:48 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-bool skip(char *arg, int i)
+bool	skip(char *arg, int i)
 {
 	if (!(arg[i] >= '0' && arg[i] <= '9')
 		&& !(arg[i] == ' ' || (arg[i] >= 9 && arg[i] <= 13))
@@ -37,9 +37,9 @@ bool skip(char *arg, int i)
 	return (0);
 }
 
-bool first_skip(char *arg, int i)
+bool	first_skip(char *arg, int i)
 {
-	int s;
+	int	s;
 
 	s = 0;
 	if (!(arg[i] >= '0' && arg[i] <= '9')
@@ -62,9 +62,9 @@ bool first_skip(char *arg, int i)
 	return (0);
 }
 
-bool is_number(char *arg)
+bool	is_number(char *arg)
 {
-	static int i;
+	static int	i;
 
 	i = 0;
 	if (!arg[i] || !arg)

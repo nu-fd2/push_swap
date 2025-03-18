@@ -6,18 +6,18 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 22:54:30 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/17 06:51:00 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/18 01:59:45 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-t_stack *s_make_a(char **av, int size)
+t_stack	*s_make_a(char **av, int size)
 {
-	long 	*arr;
-	int 	i;
-	t_stack *a;
-	t_stack *head;
+	long	*arr;
+	int		i;
+	t_stack	*a;
+	t_stack	*head;
 
 	i = 0;
 	arr = s_data(av, size);
@@ -29,5 +29,6 @@ t_stack *s_make_a(char **av, int size)
 		s_free(head);
 		is_error();
 	}
+	free(arr);
 	return (a);
 }

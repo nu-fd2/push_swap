@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 19:00:29 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/17 06:49:57 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/18 01:46:28 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 t_stack	*s_put(long *arr, t_stack *node, int size)
 {
 	int		i;
-	t_stack *head;
+	t_stack	*head;
 
 	i = 0;
 	head = node;
@@ -29,6 +29,5 @@ t_stack	*s_put(long *arr, t_stack *node, int size)
 		node = node->next;
 		i++;
 	}
-	s_print(head);
 	return (head);
 }

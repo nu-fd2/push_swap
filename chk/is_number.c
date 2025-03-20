@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 18:40:34 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/18 01:12:48 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/20 03:47:28 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,8 @@ bool	is_number(char *arg)
 	{
 		if (first_skip(arg, i++))
 			is_error();
+		while (arg[i] == '-' || arg[i] == '+')
+			i++;
 		while (arg[i] >= '0' && arg[i] <= '9')
 			i++;
 		if (arg[i] == '-' || arg[i] == '+')

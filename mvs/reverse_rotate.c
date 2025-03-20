@@ -1,32 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   s_free.c                                           :+:      :+:    :+:   */
+/*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/21 04:33:50 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/20 05:36:09 by oel-mado         ###   ########.fr       */
+/*   Created: 2025/03/20 03:54:32 by oel-mado          #+#    #+#             */
+/*   Updated: 2025/03/20 03:56:24 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	s_free(t_stack *stk)
+void	reverse_rotate()
 {
-	t_stack	*tmp;
-
-	if (!stk)
-		return ;
-	tmp = stk;
-	while (stk)
-	{
-		tmp = stk->next;
-		if (stk->is_null == 0)
-			stk->data = 0;
-		free(stk);
-		stk = tmp;
-	}
-	stk = NULL;
-	free(stk);
 }

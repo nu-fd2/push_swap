@@ -6,7 +6,7 @@
 #    By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/03 15:45:26 by oel-mado          #+#    #+#              #
-#    Updated: 2025/03/18 05:04:22 by oel-mado         ###   ########.fr        #
+#    Updated: 2025/03/20 07:41:51 by oel-mado         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,16 +27,30 @@ SRC = chk/is_error.c\
 	stk/s_atoi.c\
 	stk/s_free.c\
 	stk/s_make_empty.c\
+	mvs/push.c\
+	mvs/swap.c\
+	mvs/rotate.c\
+	mvs/reverse_rotate.c\
+	\
+	stk/of_leaks.c\
 	stk/s_print.c\
+	stk/s_print_rev.c\
 	\
 	\
-	stk/main.c
+	push_swap.c
+
+test: all
+	@echo "\033[1;35m|═══════════════════════════════════════════════════════════════════════════════════════════════════════>\033[0m"
+	@echo "\033[1;31m./$(NAME)\033[1;34m 8 -5 7 3 2 10 1 2147483647 -2147483648 \033[1;33m\" +69   11\" ' -1' \"0 38 123456789    \"\033[0m"
+	@echo ""
+	@./$(NAME) 8 -5 7 3 2 10 1 2147483647 -2147483648 " +69   11" ' -1' "0 38 123456789    "
+	@echo "\033[1;35m|═══════════════════════════════════════════════════════════════════════════════════════════════════════>\033[0m"
 
 all: $(LIBFT) push_swap.h
-	cc $(CFLAGS) $(SRC) $(LIBFT) -o $(NAME)
+	@cc $(SRC) $(LIBFT) -o $(NAME)
 
 $(LIBFT):
-	make -C libft
+	@make -C libft
 
 clean:
 	make -C libft clean

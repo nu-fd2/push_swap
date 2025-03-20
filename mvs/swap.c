@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   s_free.c                                           :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/21 04:33:50 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/20 05:36:09 by oel-mado         ###   ########.fr       */
+/*   Created: 2025/03/20 03:55:38 by oel-mado          #+#    #+#             */
+/*   Updated: 2025/03/20 05:05:11 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	s_free(t_stack *stk)
+void	swap(t_stack **who, char c)
 {
 	t_stack	*tmp;
 
-	if (!stk)
-		return ;
-	tmp = stk;
-	while (stk)
-	{
-		tmp = stk->next;
-		if (stk->is_null == 0)
-			stk->data = 0;
-		free(stk);
-		stk = tmp;
-	}
-	stk = NULL;
-	free(stk);
+	tmp = *who;
+	*who = (*who)->next;
+	tmp->next = (*who)->next;
+	(*who)->next = tmp;
+	ft_printf("s%c\n", c);
 }

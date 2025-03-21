@@ -6,7 +6,7 @@
 #    By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/03 15:45:26 by oel-mado          #+#    #+#              #
-#    Updated: 2025/03/20 07:41:51 by oel-mado         ###   ########.fr        #
+#    Updated: 2025/03/20 23:38:52 by oel-mado         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,9 @@ SRC = chk/is_error.c\
 	mvs/swap.c\
 	mvs/rotate.c\
 	mvs/reverse_rotate.c\
+	mvs/ss.c\
+	mvs/rr.c\
+	mvs/rrr.c\
 	\
 	stk/of_leaks.c\
 	stk/s_print.c\

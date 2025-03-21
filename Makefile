@@ -6,7 +6,7 @@
 #    By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/03 15:45:26 by oel-mado          #+#    #+#              #
-#    Updated: 2025/03/20 23:38:52 by oel-mado         ###   ########.fr        #
+#    Updated: 2025/03/21 05:38:05 by oel-mado         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,10 +16,12 @@ LIBFT = libft/libft.a
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRC = chk/is_error.c\
+SRC = \
+	chk/is_error.c\
 	chk/is_it_good.c\
 	chk/is_multi_arg.c\
 	chk/is_number.c\
+	\
 	stk/s_data.c\
 	stk/s_make_a.c\
 	stk/s_one.c\
@@ -27,17 +29,28 @@ SRC = chk/is_error.c\
 	stk/s_atoi.c\
 	stk/s_free.c\
 	stk/s_make_empty.c\
-	mvs/push.c\
-	mvs/swap.c\
-	mvs/rotate.c\
-	mvs/reverse_rotate.c\
+	\
+	mvs/src/push.c\
+	mvs/src/swap.c\
+	mvs/src/rotate.c\
+	mvs/src/reverse_rotate.c\
+	\
 	mvs/ss.c\
 	mvs/rr.c\
 	mvs/rrr.c\
+	mvs/pa.c\
+	mvs/pb.c\
+	mvs/sa.c\
+	mvs/sb.c\
+	mvs/ra.c\
+	mvs/rb.c\
+	mvs/rra.c\
+	mvs/rrb.c\
 	\
-	stk/of_leaks.c\
-	stk/s_print.c\
-	stk/s_print_rev.c\
+	\
+	shw/of_leaks.c\
+	shw/s_print.c\
+	shw/s_print_rev.c\
 	\
 	\
 	push_swap.c

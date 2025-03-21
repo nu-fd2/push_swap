@@ -6,13 +6,13 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 03:53:09 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/20 09:54:11 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/21 05:05:36 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
-void	push(t_stack **from, t_stack **to, char c)
+void	push(t_stack **from, t_stack **to)
 {
 	t_stack	*nu_h_f;
 	t_stack	*nu_e_t;
@@ -31,5 +31,4 @@ void	push(t_stack **from, t_stack **to, char c)
 	(*to)->is_head = 0;
 	*to = *from;
 	*from = nu_h_f;
-	ft_printf("p%c\n", c);
 }

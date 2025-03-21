@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 15:45:36 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/21 05:39:58 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/21 11:27:12 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,23 +49,24 @@ bool	is_number(char *arg);
 int		is_it_good(char **arg);
 int		is_multi_arg(char *arg);
 
+//src
+
+t_stack	*last(t_stack **who);
+void	push(t_stack **from, t_stack **to);
+void	swap(t_stack **who);
+void	rotate(t_stack **who);
+void	reverse_rotate(t_stack **who);
+
 // mvs
 
-void	push(t_stack **from, t_stack **to);
 void	pa(t_stack **a, t_stack **b);
 void	pb(t_stack **a, t_stack **b);
-
-void	swap(t_stack **who);
 void	sa(t_stack **a);
 void	sb(t_stack **b);
 void	ss(t_stack **a, t_stack **b);
-
-void	rotate(t_stack **who);
 void	ra(t_stack **a);
 void	rb(t_stack **b);
 void	rr(t_stack **a, t_stack **b);
-
-void	reverse_rotate(t_stack **who);
 void	rra(t_stack **a);
 void	rrb(t_stack **b);
 void	rrr(t_stack **a, t_stack **b);

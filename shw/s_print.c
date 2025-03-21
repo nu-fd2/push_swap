@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 01:47:57 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/21 06:09:13 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/21 08:56:23 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,13 @@ void	s_print(t_stack *head)
 {
 	int		data;
 	int		size;
-	int i = 0;
+
 	size = 0;
 	if (!head)
 		ft_printf("\033[1;31mhead 5awi a zmr\033[0m\n");
-	while (i < 17)
+	while (head)
 	{
 		size++;
-		i++;
 		data = (int)head->data;
 		if (data == 0)
 		{

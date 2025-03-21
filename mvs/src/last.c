@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_error.c                                         :+:      :+:    :+:   */
+/*   last.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/28 21:01:41 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/21 11:24:27 by oel-mado         ###   ########.fr       */
+/*   Created: 2025/03/21 11:21:34 by oel-mado          #+#    #+#             */
+/*   Updated: 2025/03/21 11:25:58 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
-void	is_error(void)
+t_stack	*last(t_stack **who)
 {
-	write(2, "\033[1;31mError.\033[0m\n", 18);
-	// of_leaks();
-	exit(0);
+	t_stack	*tmp = *who;
+
+	while (tmp->next && tmp->next->is_null == 0)
+		tmp = tmp->next;
+	return tmp;
 }

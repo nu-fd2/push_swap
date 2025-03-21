@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 01:47:57 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/21 06:09:24 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/21 09:40:43 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ void	s_print_rev(t_stack *head)
 		ft_printf("\033[1;31mhead is NULL\033[0m\n");
 		return;
 	}
-	ft_printf("\033[1;35mhead %d\033[0m", (int)head->data);
+	ft_printf("\033[1;35mhead    : %d\033[0m", (int)head->data);
 	ft_printf("\033[1;37m->\033[0m");
 	head = head->prev;
 	size++;
-	while (i < 17)
+	while (i < 15)
 	{
 		i++;
 		size++;

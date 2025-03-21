@@ -6,41 +6,30 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 03:54:32 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/21 06:07:14 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/21 11:20:56 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-t_stack	*last(t_stack **who)
-{
-	t_stack *tmp = *who;
-	while (tmp->next && tmp->next->is_null == 0)
-		tmp = tmp->next;
-	return tmp;
-}
-
 void	rotate(t_stack **who)
 {
-	t_stack	*first;
+	t_stack	*head;
 	t_stack	*lst;
+	t_stack	*ned;
 
-	first = *who;
 	lst = last(who);
-
-	// Detach first node
-	*who = first->next;
-	(*who)->is_head = true;
-	(*who)->prev = first->prev;
-	first->prev->next = *who;
-
-	// Move first after the last node
-	first->next = lst->next;
-	if (lst->next)
-		lst->next->prev = first;
-	lst->next = first;
-	first->prev = lst;
-	first->is_head = false;
+	ned = lst->next;
+	head = (*who)->next;
+	head->prev = (*who)->prev;
+	(*who)->prev = lst;
+	lst->next = (*who);
+	(*who)->next = ned;
+	if ((*who)->next == NULL)
+		head->prev = (*who);
+	else
+		ned->prev = (*who);
+	(*who)->is_head = 0;
+	head->is_head = 1;
+	*who = head;
 }
-
-

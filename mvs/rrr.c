@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 04:54:13 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/21 05:09:05 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/24 20:56:17 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,5 @@ void	rrr(t_stack **a, t_stack **b)
 {
 	reverse_rotate(a);
 	reverse_rotate(b);
-	ft_printf("rrr\n");
+	write(1, "rrr\n", 1);
 }

@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 12:33:53 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/24 20:33:08 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/24 20:47:11 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	nig(t_stack **b, int in)
 
 void	pearto(t_stack **a, t_stack **b, int who, int size)
 {
-	int i;
+	int	i;
 
 	i = nig(b, who);
 	if ((*b)->index == who)

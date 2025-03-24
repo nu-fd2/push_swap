@@ -1,32 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   s_make_a.c                                         :+:      :+:    :+:   */
+/*   s_stack.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/22 22:54:30 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/24 15:01:16 by oel-mado         ###   ########.fr       */
+/*   Created: 2025/03/24 15:07:05 by oel-mado          #+#    #+#             */
+/*   Updated: 2025/03/24 16:28:48 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-t_stack	*s_make_a(char **av, int size)
+void	s_stack(t_stack **head)
 {
-	long	*arr;
-	t_stack	*a;
-	t_stack	*head;
+	t_stack	*t;
+	int		in;
+	int		tmp;
 
-	arr = s_data(av, size);
-	a = s_make_empty(size, 0);
-	head = s_put(arr, a, size);
-	if (!head)
+	t = *head;
+	tmp = -1;
+	while (t)
 	{
-		free(arr);
-		s_free(head);
-		is_error();
+		in = 0;
+		if (tmp != -1 && t->index < tmp)
+		{
+			while (in <= t->index)
+			{
+				in++;
+				ft_printf("\033[1;41m \033[0m");
+			}
+		}
+		else
+		{
+			while (in <= t->index)
+			{
+				in++;
+				ft_printf("\033[1;42m \033[0m");
+			}
+		}
+		ft_printf(" %d\n", t->data);
+		tmp = t->index;
+		t = t->next;
 	}
-	free(arr);
-	return (a);
 }

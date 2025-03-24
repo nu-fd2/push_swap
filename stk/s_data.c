@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 17:11:55 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/18 01:44:54 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/24 15:00:08 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,11 +68,9 @@ long	*s_arav(char **av, int size)
 long	*s_data(char **av, int size)
 {
 	int		i;
-	int		j;
 	long	*data;
 
 	i = 0;
-	j = 0;
 	data = s_arav(av, size);
 	while (i < size)
 	{

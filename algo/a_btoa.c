@@ -6,38 +6,46 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 12:33:53 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/24 14:32:20 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/24 20:33:08 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	pearto(t_stack **a, t_stack **b, int size, int who, int i)
+int	nig(t_stack **b, int in)
 {
-	// t_stack	*lain;
+	int		i;
+	t_stack	*tmp;
 
-	if (i == 0)
+	i = 0;
+	tmp = *b;
+	while (tmp)
+	{
+		i++;
+		if (tmp->index == in)
+			return (i);
+		tmp = tmp->next;
+	}
+	return (-1);
+}
+
+void	pearto(t_stack **a, t_stack **b, int who, int size)
+{
+	int i;
+
+	i = nig(b, who);
+	if ((*b)->index == who)
 		pa(a, b);
 	else
 	{
-		// ft_printf("\033[1;45;97mHiii!!! :3 >////<\n\033[0m");
-		if (i <= size / 2)
+		while ((*b)->index != who)
 		{
-			while ((*b)->index != who)
+			if (i <= size / 2)
 				rb(b);
-		}
-		else
-		{
-			while ((*b)->index != who)
-			{
-				
+			else
 				rrb(b);
-			}
 		}
 		pa(a, b);
-				s_print(*b);
-				s_print(*a);
-		exit(1);
 	}
 }
 
@@ -45,32 +53,26 @@ void	a_btoa(t_stack **a, t_stack **b, int size)
 {
 	t_stack	*teto;
 	int		miku;
-	int		miku_max_index;
 	int		i;
 
-	while (size > 0 )
+	while (size > 0)
 	{
-		i = 0;
 		miku = 0;
+		i = 0;
 		teto = *b;
-		if ((teto->next)->is_null == 1)
+		if (!teto->next || (teto->next)->is_null == 1)
 			pa(a, b);
-			
 		else
 		{
-			// ft_printf("\033[1;45;97m%d\n\033[0m", miku);
-			miku_max_index = 0;
-			while (teto)
+			teto = *b;
+			while (teto && teto->is_null == 0)
 			{
-				if (teto->index > miku_max_index)
-				{
-					miku_max_index = teto->index;
-					miku  = i;
-				}
-				i++;
+				if (teto->index > miku)
+					miku = teto->index;
 				teto = teto->next;
+				i++;
 			}
-			pearto(a, b, size, miku, i);
+			pearto(a, b, miku, size);
 		}
 		size--;
 	}

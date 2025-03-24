@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 15:45:36 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/24 12:42:42 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/24 15:24:29 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void	of_leaks(void);
 void	s_print(t_stack *head);
 void	s_print_rev(t_stack *head);
 void	s_print_in(t_stack *head);
+void	s_stack(t_stack **head);
 
 // chk
 

@@ -151,6 +151,7 @@ SRC = push_swap.c \
 	shw/of_leaks.c \
 	shw/s_print.c \
 	shw/s_print_rev.c \
+	shw/s_stack.c \
 	shw/s_print_in.c
 
 OBJ = $(SRC:.c=.o)
@@ -174,6 +175,7 @@ $(LIBFT):
 
 clean:
 	make -C libft clean
+	rm -f $(OBJ)
 
 fclean:
 	make -C libft fclean

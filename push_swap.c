@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 15:45:31 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/24 14:15:23 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/24 20:41:55 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,8 @@ int	main(int ac, char **av)
 	a = s_make_a(&av[1], size);
 	b = s_make_empty(size, 1);
 	ac = size;
-	s_print(a);
-	s_print(b);
 	if (size == 1)
-		ft_printf("\n");
+		write(1, "\n", 1);
 	else if (size == 2)
 		a_two(&a);
 	else if (size == 3)
@@ -34,26 +32,15 @@ int	main(int ac, char **av)
 		a_four(&a, &b);
 	else if (size == 5)
 		a_five(&a, &b);
-	a_index(&a, size);
-	a_atob(&a, &b, size);
-	// exit(EXIT_SUCCESS);
-	a_btoa(&a, &b, size);
-	t_stack *tmp = a;
-	while (tmp)
+	else
 	{
-		for (int j = 0; j < tmp->index; j++)
-			ft_printf("|");
-		ft_printf("\n");
-		tmp = tmp->next;
-	};
-	// s_print(a);
-	// s_print(b);
-	// s_print_in(a);
-	// s_print_rev(a);
-
+		a_index(&a, size);
+		a_atob(&a, &b, size);
+		a_btoa(&a, &b, size);
+	}
 	s_free(a);
 	s_free(b);
 	ac--;
-	// of_leaks();
+	of_leaks();
 	return (0);
 }

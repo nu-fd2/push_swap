@@ -1,34 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   s_make_a.c                                         :+:      :+:    :+:   */
+/*   a_four.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/22 22:54:30 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/21 14:12:27 by oel-mado         ###   ########.fr       */
+/*   Created: 2025/03/24 09:03:51 by oel-mado          #+#    #+#             */
+/*   Updated: 2025/03/24 09:14:06 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-t_stack	*s_make_a(char **av, int size)
+void	a_four(t_stack **a, t_stack **b)
 {
-	long	*arr;
-	int		i;
-	t_stack	*a;
-	t_stack	*head;
+	t_stack	*tmp;
+	t_stack	*zid;
 
-	i = 0;
-	arr = s_data(av, size);
-	a = s_make_empty(size, 0);
-	head = s_put(arr, a, size);
-	if (!head)
+	tmp = *a;
+	zid = (*a)->next;
+	while (zid)
 	{
-		free(arr);
-		s_free(head);
-		is_error();
+		if (tmp->data > zid->data)
+			tmp = zid;
+		zid = zid->next;
 	}
-	free(arr);
-	return (a);
+	if (tmp == (*a)->next)
+		ra(a);
+	else if (tmp == ((*a)->next)->next)
+		(ra(a), ra(a));
+	else if (tmp == (*a)->prev)
+		rra(a);
+	pb(a, b);
+	a_three(a);
+	pa(a, b);
 }

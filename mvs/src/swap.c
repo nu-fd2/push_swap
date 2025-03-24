@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 03:55:38 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/21 05:05:49 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/24 09:32:14 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ void	swap(t_stack **who)
 	st = *who;
 	nd = st->next;
 	st->next = nd->next;
-	nd->next->prev = st;
+	if (nd->next)
+		nd->next->prev = st;
 	nd->prev = st->prev;
 	nd->next = st;
 	st->prev = nd;

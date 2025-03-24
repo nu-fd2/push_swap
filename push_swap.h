@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 15:45:36 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/21 11:27:12 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/24 09:19:49 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 typedef struct s_stack
 {
 	int				data;
-	int				index;
+	long			index;
 	bool			is_null;
 	bool			is_head;
 	struct s_stack	*next;
@@ -70,5 +70,12 @@ void	rr(t_stack **a, t_stack **b);
 void	rra(t_stack **a);
 void	rrb(t_stack **b);
 void	rrr(t_stack **a, t_stack **b);
+
+// algo
+
+void	a_two(t_stack **a);
+void	a_three(t_stack **a);
+void	a_five(t_stack **a, t_stack **b);
+void	a_four(t_stack **a, t_stack **b);
 
 #endif // PUSH_SWAP_H

@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 15:45:31 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/24 10:10:50 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/24 14:15:23 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int	main(int ac, char **av)
 	b = s_make_empty(size, 1);
 	ac = size;
 	s_print(a);
+	s_print(b);
 	if (size == 1)
 		ft_printf("\n");
 	else if (size == 2)
@@ -33,7 +34,21 @@ int	main(int ac, char **av)
 		a_four(&a, &b);
 	else if (size == 5)
 		a_five(&a, &b);
-	s_print(a);
+	a_index(&a, size);
+	a_atob(&a, &b, size);
+	// exit(EXIT_SUCCESS);
+	a_btoa(&a, &b, size);
+	t_stack *tmp = a;
+	while (tmp)
+	{
+		for (int j = 0; j < tmp->index; j++)
+			ft_printf("|");
+		ft_printf("\n");
+		tmp = tmp->next;
+	};
+	// s_print(a);
+	// s_print(b);
+	// s_print_in(a);
 	// s_print_rev(a);
 
 	s_free(a);

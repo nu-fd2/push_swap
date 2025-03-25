@@ -15,7 +15,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
-# include <stdarg.h>
 # include <stdint.h>
 
 typedef struct s_list
@@ -23,15 +22,6 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }					t_list;
-
-int			ft_printf(const char *s, ...);
-
-int			ft_putchar(char c);
-int			ft_putnbr(long n);
-int			ft_putstr(char *s);
-int			ft_putadr(unsigned long n);
-int			ft_puthex(unsigned long n, const char *base);
-int			ft_prints(const char *rei, va_list lain, int i);
 
 size_t		ft_strlen(const char *who);
 size_t		ft_strlcpy(char *dst, const char *src, size_t n);

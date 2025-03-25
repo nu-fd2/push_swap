@@ -14,6 +14,6 @@
 
 void	is_error(void)
 {
-	write(2, "\033[1;31mError.\033[0m\n", 18);
+	write(2, "\033[1;31mError\033[0m\n", 18);
 	exit(0);
 }

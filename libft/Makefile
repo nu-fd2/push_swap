@@ -50,13 +50,6 @@ SRC = ft_atoi.c\
 	ft_substr.c\
 	ft_tolower.c\
 	ft_toupper.c\
-	ft_printf/ft_printf.c\
-	ft_printf/src/ft_prints.c\
-	ft_printf/src/ft_putadr.c\
-	ft_printf/src/ft_putchar.c\
-	ft_printf/src/ft_puthex.c\
-	ft_printf/src/ft_putnbr.c\
-	ft_printf/src/ft_putstr.c\
 	ft_lstnew_bonus.c\
 	ft_lstadd_front_bonus.c\
 	ft_lstadd_back_bonus.c\

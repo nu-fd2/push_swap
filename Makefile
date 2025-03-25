@@ -58,70 +58,18 @@ SRC = push_swap.c \
 	algo/a_atob.c\
 	algo/a_btoa.c\
 	\
-	shw/of_leaks.c\
-	shw/s_print.c\
-	shw/s_print_rev.c\
-	shw/s_print_in.c\
 	\
-	\
-
-# OBJ = $(SRC:.c=.o)
-
-# test: all
-# 	@echo "\033[1;35m|═══════════════════════════════════════════════════════════════════════════════════════════════════════>\033[0m"
-# 	@echo "\033[1;31m./$(NAME)\033[1;34m 8 -5 7 3 2 10 1 2147483647 -2147483648 \033[1;33m\" +69   11\" ' -1' \"0 38 123456789    \"\033[0m"
-# 	@echo ""
-# 	@./$(NAME) 8 -5 7 3 2 10 1 2147483647 -2147483648 " +69   11" ' -1' "0 38 123456789    "
-# #	@./$(NAME) 1 3 -56 0 653 -2 4 68 -5
-# 	@echo "\033[1;35m|═══════════════════════════════════════════════════════════════════════════════════════════════════════>\033[0m"
-
-# all: $(LIBFT) $(OBJ)
-# 	@cc $(LIBFT) $(CFLAGS) -o $(NAME) $(OBJ) 
-
-# %.o: %.c push_swap.h
-# 	cc $(CFLAGS) $< -c $@
-
-# $(LIBFT):
-# 	@make -C libft
-
-# clean:
-# 	make -C libft clean
-
-# fclean:
-# 	make -C libft fclean
-# 	rm -f $(NAME)
-
-# re: fclean all
-
-# .PHONY: all clean fclean re
-
-
-
-
-LIBFT = libft/libft.a
-
-CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g
-
-
 
 OBJ = $(SRC:.c=.o)
 
-# test: all
-# 	@echo "\033[1;35m|═══════════════════════════════════════════════════════════════════════════════════════════════════════>\033[0m"
-# 	@echo "\033[1;31m./$(NAME)\033[1;34m 8 -5 7 3 2 10 1 2147483647 -2147483648 \033[1;33m\" +69   11\" ' -1' \"0 38 123456789    \"\033[0m"
-# 	@echo ""
-# 	@./$(NAME) 8 -5 7 3 2 10 1 2147483647 -2147483648 " +69   11" ' -1' "0 38 123456789    "
-# 	@echo "\033[1;35m|═══════════════════════════════════════════════════════════════════════════════════════════════════════>\033[0m"
-
 all: $(LIBFT) $(OBJ)
-	@cc $(LIBFT) $(CFLAGS) -o $(NAME) $(OBJ)
+	cc $(LIBFT) $(CFLAGS) -o $(NAME) $(OBJ) 
 
 %.o: %.c push_swap.h
-	$(CC) $(CFLAGS) -c $< -o $@
-
+	cc $(CFLAGS) -c $< -o $@
 
 $(LIBFT):
-	@make -C libft
+	make -C libft
 
 clean:
 	make -C libft clean
@@ -130,6 +78,7 @@ clean:
 fclean:
 	make -C libft fclean
 	rm -f $(NAME)
+	rm -f $(OBJ)
 
 re: fclean all
 

@@ -15,5 +15,5 @@
 void	rra(t_stack **a)
 {
 	reverse_rotate(a);
-	write(1, "rra\n", 3);
+	write(1, "rra\n", 4);
 }

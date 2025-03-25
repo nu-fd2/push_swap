@@ -15,6 +15,8 @@ NAME = push_swap
 
 LIBFT = libft/libft.a
 
+NBNS = checker
+
 CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g
 
 SRC = push_swap.c \
@@ -60,13 +62,20 @@ SRC = push_swap.c \
 	\
 	\
 
+BNS = bonus/checker.c
+
 OBJ = $(SRC:.c=.o)
+
+OBJB = $(BNS:.c=.o)
 
 all: $(LIBFT) $(OBJ)
 	cc $(LIBFT) $(CFLAGS) -o $(NAME) $(OBJ) 
 
 %.o: %.c push_swap.h
 	cc $(CFLAGS) -c $< -o $@
+
+bonus: $(BNS)
+	cc $(LIBFT) $(CFLAGS) -o $(NBNS) $(OBJ)
 
 $(LIBFT):
 	make -C libft
@@ -82,4 +91,4 @@ fclean:
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus

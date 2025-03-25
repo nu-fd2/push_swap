@@ -6,7 +6,7 @@
 #    By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/24 21:12:48 by oel-mado          #+#    #+#              #
-#    Updated: 2025/03/24 21:13:29 by oel-mado         ###   ########.fr        #
+#    Updated: 2025/03/25 15:38:07 by oel-mado         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ LIBFT = libft/libft.a
 
 NBNS = checker
 
-CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g
+CFLAGS = -Wall -Wextra -Werror
 
 SRC = push_swap.c \
 	\

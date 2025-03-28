@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 15:45:36 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/24 21:11:07 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/25 16:03:27 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,7 @@ void	a_four(t_stack **a, t_stack **b);
 void	a_index(t_stack **a, int size);
 void	a_atob(t_stack **a, t_stack **b, int size);
 void	a_btoa(t_stack **a, t_stack **b, int size);
+
+void	s_stack(t_stack **head);
 
 #endif // PUSH_SWAP_H

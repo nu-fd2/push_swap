@@ -6,42 +6,45 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 14:36:45 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/24 20:47:34 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/28 07:47:08 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	in_three(t_stack *m, t_stack *n, t_stack *o, t_stack **a)
+void	in_three(t_stack *m, t_stack *n, t_stack *o, t_stack **a, t_stack **b)
 {
 	if (n->data < m->data && n->data < o->data)
 	{
 		if (m->data > o->data)
-			ra(a);
+			ra(a, b);
 		else
-			sa(a);
+			sa(a, b);
 	}
 	else if (n->data > m->data && n->data > o->data)
 	{
 		if (m->data > o->data)
-			rra(a);
+			rra(a, b);
 		else
 		{
-			sa(a);
-			ra(a);
+			sa(a, b);
+			ra(a, b);
 		}
 	}
 	else
 	{
 		if (m->data > o->data)
 		{
-			ra(a);
-			sa(a);
+			ra(a, b);
+			sa(a, b);
 		}
 	}
 }
 
-void	a_three(t_stack **a)
+void	a_three(t_stack **a, t_stack **b, bool from_four)
 {
-	in_three(*a, ((*a)->next), ((*a)->next)->next, a);
+	
+	if (!from_four)
+		a_index(a, 3);
+	in_three(*a, ((*a)->next), ((*a)->next)->next, a, b);
 }

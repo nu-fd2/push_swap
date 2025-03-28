@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 15:45:36 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/25 16:03:27 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/28 07:51:03 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,26 +55,26 @@ void	reverse_rotate(t_stack **who);
 
 void	pa(t_stack **a, t_stack **b);
 void	pb(t_stack **a, t_stack **b);
-void	sa(t_stack **a);
-void	sb(t_stack **b);
+void	sa(t_stack **a, t_stack **b);
+void	sb(t_stack **a, t_stack **b);
 void	ss(t_stack **a, t_stack **b);
-void	ra(t_stack **a);
-void	rb(t_stack **b);
+void	ra(t_stack **a, t_stack **b);
+void	rb(t_stack **a, t_stack **b);
 void	rr(t_stack **a, t_stack **b);
-void	rra(t_stack **a);
-void	rrb(t_stack **b);
+void	rra(t_stack **a, t_stack **b);
+void	rrb(t_stack **a, t_stack **b);
 void	rrr(t_stack **a, t_stack **b);
 
 // algo
 
-void	a_two(t_stack **a);
-void	a_three(t_stack **a);
+void	a_two(t_stack **a, t_stack **b);
+void	a_three(t_stack **a, t_stack **b, bool from_four);
 void	a_five(t_stack **a, t_stack **b);
-void	a_four(t_stack **a, t_stack **b);
+void	a_four(t_stack **a, t_stack **b, bool from_five);
 void	a_index(t_stack **a, int size);
 void	a_atob(t_stack **a, t_stack **b, int size);
 void	a_btoa(t_stack **a, t_stack **b, int size);
 
-void	s_stack(t_stack **head);
+void	s_stack(t_stack **head, bool s);
 
 #endif // PUSH_SWAP_H

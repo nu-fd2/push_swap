@@ -6,14 +6,15 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 05:07:01 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/24 20:56:03 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/28 07:33:20 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	rrb(t_stack **b)
+void	rrb(t_stack **a, t_stack **b)
 {
 	reverse_rotate(b);
-	write(1, "rrb\n", 4);
+	s_stack(a, 0);
+	s_stack(b, 1);
 }

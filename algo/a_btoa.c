@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 12:33:53 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/24 20:47:11 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/28 07:34:55 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ void	pearto(t_stack **a, t_stack **b, int who, int size)
 		while ((*b)->index != who)
 		{
 			if (i <= size / 2)
-				rb(b);
+				rb(a, b);
 			else
-				rrb(b);
+				rrb(a, b);
 		}
 		pa(a, b);
 	}

@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 12:14:34 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/24 20:47:14 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/28 07:34:33 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ void	a_atob(t_stack **a, t_stack **b, int size)
 		}
 		else if ((*a)->index < min)
 		{
-			(pb(a, b), rb(b));
+			(pb(a, b), rb(a, b));
 			min++;
 			max++;
 		}
 		else
-			ra(a);
+			ra(a, b);
 	}
 }

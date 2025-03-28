@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 23:34:08 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/24 20:58:05 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/28 07:29:51 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,6 @@ void	ss(t_stack **a, t_stack **b)
 {
 	swap(a);
 	swap(b);
-	write(1, "ss\n", 3);
+	s_stack(a, 0);
+	s_stack(b, 1);
 }

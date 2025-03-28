@@ -6,14 +6,15 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 09:18:00 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/24 20:47:37 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/28 07:43:45 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	a_two(t_stack **a)
+void	a_two(t_stack **a, t_stack **b)
 {
+	a_index(a, 2);
 	if ((*a)->data > ((*a)->next)->data)
-		sa(a);
+		sa(a, b);
 }

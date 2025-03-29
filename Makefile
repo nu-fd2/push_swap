@@ -6,7 +6,7 @@
 #    By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/24 21:12:48 by oel-mado          #+#    #+#              #
-#    Updated: 2025/03/25 16:06:51 by oel-mado         ###   ########.fr        #
+#    Updated: 2025/03/28 11:36:58 by oel-mado         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ SRC = push_swap.c \
 	chk/is_it_good.c\
 	chk/is_multi_arg.c\
 	chk/is_number.c\
+	chk/is_sorted.c\
 	\
 	stk/s_data.c\
 	stk/s_make_a.c\

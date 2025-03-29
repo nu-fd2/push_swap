@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 09:18:00 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/28 07:43:45 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/29 12:07:58 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	a_two(t_stack **a, t_stack **b)
 {
-	a_index(a, 2);
-	if ((*a)->data > ((*a)->next)->data)
+	if (!is_sorted(a))
 		sa(a, b);
 }

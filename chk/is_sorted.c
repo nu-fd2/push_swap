@@ -1,39 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   a_four.c                                           :+:      :+:    :+:   */
+/*   is_sorted.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/24 09:03:51 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/29 12:08:28 by oel-mado         ###   ########.fr       */
+/*   Created: 2025/03/28 11:27:55 by oel-mado          #+#    #+#             */
+/*   Updated: 2025/03/29 12:41:44 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	a_four(t_stack **a, t_stack **b)
+bool	is_sorted(t_stack **head)
 {
-	t_stack	*tmp;
-	t_stack	*zid;
+	t_stack	*t;
+	long	tmp;
 
-	tmp = *a;
-	zid = (*a)->next;
-	if (is_sorted(a))
-		return ;
-	while (zid)
+	t = *head;
+	tmp = -2;
+	while (t)
 	{
-		if (tmp->data > zid->data && !zid->is_null)
-			tmp = zid;
-		zid = zid->next;
+		if (t->index < tmp)
+			return (0);
+		tmp = t->index;
+		t = t->next;
 	}
-	if (tmp == (*a)->next)
-		ra(a, b);
-	else if (tmp == ((*a)->next)->next)
-		(ra(a, b), ra(a, b));
-	else if (tmp == (*a)->prev)
-		rra(a, b);
-	pb(a, b);
-	a_three(a, b);
-	pa(a, b);
+	return (1);
 }

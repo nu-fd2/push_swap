@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 14:18:03 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/28 07:49:09 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/29 12:08:18 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ void	a_five(t_stack **a, t_stack **b)
 	t_stack	*tmp;
 	t_stack	*zid;
 
-	a_index(a, 5);
 	tmp = *a;
 	zid = (*a)->next;
 	while (zid)
@@ -35,6 +34,6 @@ void	a_five(t_stack **a, t_stack **b)
 	else if (tmp == (*a)->prev)
 		rra(a, b);
 	pb(a, b);
-	a_four(a, b, 1);
+	a_four(a, b);
 	pa(a, b);
 }

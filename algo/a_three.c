@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 14:36:45 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/28 07:47:08 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/29 12:08:37 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,8 @@ void	in_three(t_stack *m, t_stack *n, t_stack *o, t_stack **a, t_stack **b)
 	}
 }
 
-void	a_three(t_stack **a, t_stack **b, bool from_four)
+void	a_three(t_stack **a, t_stack **b)
 {
-	
-	if (!from_four)
-		a_index(a, 3);
-	in_three(*a, ((*a)->next), ((*a)->next)->next, a, b);
+	if (!is_sorted(a))
+		in_three(*a, ((*a)->next), ((*a)->next)->next, a, b);
 }

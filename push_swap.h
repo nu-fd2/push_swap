@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 15:45:36 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/28 07:51:03 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/29 12:09:19 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include "libft/libft.h"
 # include <stdbool.h>
+
+#include <stdio.h>
 
 typedef struct s_stack
 {
@@ -42,6 +44,7 @@ void	is_error(void);
 bool	is_number(char *arg);
 int		is_it_good(char **arg);
 int		is_multi_arg(char *arg);
+bool	is_sorted(t_stack **head);
 
 //src
 
@@ -68,9 +71,9 @@ void	rrr(t_stack **a, t_stack **b);
 // algo
 
 void	a_two(t_stack **a, t_stack **b);
-void	a_three(t_stack **a, t_stack **b, bool from_four);
+void	a_three(t_stack **a, t_stack **b);
 void	a_five(t_stack **a, t_stack **b);
-void	a_four(t_stack **a, t_stack **b, bool from_five);
+void	a_four(t_stack **a, t_stack **b);
 void	a_index(t_stack **a, int size);
 void	a_atob(t_stack **a, t_stack **b, int size);
 void	a_btoa(t_stack **a, t_stack **b, int size);

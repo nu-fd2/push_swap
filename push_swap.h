@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 15:45:36 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/29 14:45:43 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/29 16:18:24 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void	rrr(t_stack **a, t_stack **b);
 void	a_two(t_stack **a);
 void	a_three(t_stack **a);
 void	a_five(t_stack **a, t_stack **b);
-void	a_four(t_stack **a, t_stack **b);
+void	a_four(t_stack **a, t_stack **b, bool ss);
 void	a_index(t_stack **a, int size);
 void	a_atob(t_stack **a, t_stack **b, int size);
 void	a_btoa(t_stack **a, t_stack **b, int size);

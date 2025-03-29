@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 14:18:03 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/29 14:04:13 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/29 16:04:44 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,19 @@
 void	a_five(t_stack **a, t_stack **b)
 {
 	t_stack	*tmp;
-	t_stack	*zid;
 
+	tmp = *a;
 	if (is_sorted(a))
 		return ;
-	tmp = *a;
-	zid = (*a)->next;
-	while (zid)
-	{
-		if (tmp->data > zid->data)
-			tmp = zid;
-		zid = zid->next;
-	}
-	if (tmp == (*a)->next)
+	if ((tmp->next)->index == 0)
 		ra(a);
-	else if (tmp == ((*a)->next)->next)
+	else if (((tmp->next)->next)->index == 0)
 		(ra(a), ra(a));
-	else if (tmp == ((*a)->prev)->prev)
+	else if (((tmp->prev)->prev)->index == 0)
 		(rra(a), rra(a));
-	else if (tmp == (*a)->prev)
+	else if ((tmp->prev)->index == 0)
 		rra(a);
 	pb(a, b);
-	a_four(a, b);
+	a_four(a, b, 1);
 	pa(a, b);
 }

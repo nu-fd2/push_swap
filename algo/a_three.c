@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 14:36:45 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/29 13:59:31 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/29 15:10:22 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 void	in_three(t_stack *m, t_stack *n, t_stack *o, t_stack **a)
 {
-	if (n->data < m->data && n->data < o->data)
+	if (n->index < m->index && n->index < o->index)
 	{
-		if (m->data > o->data)
+		if (m->index > o->index)
 			ra(a);
 		else
 			sa(a);
 	}
-	else if (n->data > m->data && n->data > o->data)
+	else if (n->index > m->index && n->index > o->index)
 	{
-		if (m->data > o->data)
+		if (m->index > o->index)
 			rra(a);
 		else
 		{
@@ -33,7 +33,7 @@ void	in_three(t_stack *m, t_stack *n, t_stack *o, t_stack **a)
 	}
 	else
 	{
-		if (m->data > o->data)
+		if (m->index > o->index)
 		{
 			ra(a);
 			sa(a);

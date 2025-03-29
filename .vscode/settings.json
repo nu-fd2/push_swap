@@ -63,6 +63,7 @@
     "ft_printf.h": "c",
     "libft.h": "c",
     "sstream": "c",
-    "check.h": "c"
+    "check.h": "c",
+    "algorithm": "c"
   }
 }

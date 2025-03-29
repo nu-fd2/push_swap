@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 15:45:31 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/28 07:02:02 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/29 14:02:16 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	fun(t_stack **a, t_stack **b, int size)
 {
 	if (size == 1)
-		write(1, "\n", 1);
+		return ;
 	else if (size == 2)
 		a_two(a);
 	else if (size == 3)
@@ -26,7 +26,6 @@ void	fun(t_stack **a, t_stack **b, int size)
 		a_five(a, b);
 	else
 	{
-		a_index(a, size);
 		a_atob(a, b, size);
 		a_btoa(a, b, size);
 	}
@@ -41,7 +40,9 @@ int	main(int ac, char **av)
 	size = is_it_good(av) - 1;
 	a = s_make_a(&av[1], size);
 	b = s_make_empty(size, 1);
-	fun(&a, &b, size);
+	a_index(&a, size);
+	if (!is_sorted(&a))
+		fun(&a, &b, size);
 	s_free(a);
 	s_free(b);
 	ac--;

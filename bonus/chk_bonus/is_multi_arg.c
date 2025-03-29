@@ -1,34 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   is_multi_arg.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/06 05:28:39 by oel-mado          #+#    #+#             */
-/*   Updated: 2024/11/12 19:33:12 by oel-mado         ###   ########.fr       */
+/*   Created: 2025/02/24 01:02:00 by oel-mado          #+#    #+#             */
+/*   Updated: 2025/03/24 20:49:38 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+int	is_multi_arg(char *arg)
 {
-	size_t	f;
-	size_t	l;
+	int		i;
+	int		nb;
+	bool	s;
 
-	f = 0;
-	if (!s1 || !set)
-		return (NULL);
-	if (s1 == NULL)
-		return (ft_calloc(sizeof(char), 1));
-	l = ft_strlen(s1);
-	if (set == NULL || !l)
-		return (ft_strdup(s1));
-	l--;
-	while (s1[f] && ft_strchr(set, s1[f]))
-		f++;
-	while (l > f && ft_strrchr(set, s1[l]))
-		l--;
-	return (ft_substr(s1, f, l - f + 1));
+	i = 0;
+	s = 0;
+	nb = 0;
+	while (arg[i])
+	{
+		if (arg[i] >= '0' && arg[i] <= '9')
+		{
+			if (s == 0)
+			{
+				nb++;
+				s = 1;
+			}
+		}
+		else
+			s = 0;
+		i++;
+	}
+	return (nb);
 }

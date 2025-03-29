@@ -6,25 +6,22 @@
 #    By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/24 21:12:48 by oel-mado          #+#    #+#              #
-#    Updated: 2025/03/25 16:06:51 by oel-mado         ###   ########.fr        #
+#    Updated: 2025/03/29 14:45:19 by oel-mado         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME = push_swap
 
-LIBFT = libft/libft.a
-
-NBNS = checker
-
 CFLAGS = -Wall -Wextra -Werror
 
-SRC = push_swap.c \
+SRC = push_swap.c\
 	\
 	chk/is_error.c\
 	chk/is_it_good.c\
 	chk/is_multi_arg.c\
 	chk/is_number.c\
+	chk/is_sorted.c\
 	\
 	stk/s_data.c\
 	stk/s_make_a.c\
@@ -60,35 +57,33 @@ SRC = push_swap.c \
 	algo/a_atob.c\
 	algo/a_btoa.c\
 	\
+	libft/ft_calloc.c\
+	libft/ft_bzero.c\
+	libft/ft_memset.c\
+	libft/ft_itoa.c\
+	libft/ft_putstr_fd.c\
+	libft/ft_strdup.c\
+	libft/ft_putchar_fd.c\
+	libft/ft_strlen.c\
+	libft/ft_strlcpy.c\
 	\
-	bonus/checker.c
-
-BNS = bonus/checker.c
+	\
 
 OBJ = $(SRC:.c=.o)
 
-OBJB = $(BNS:.c=.o)
+all: $(NAME)
 
-all: $(LIBFT) $(OBJ)
-	cc $(LIBFT) $(CFLAGS) -o $(NAME) $(OBJ) 
+$(NAME): $(OBJ)
+	cc $(CFLAGS) $(OBJ) -o $(NAME)
 
 %.o: %.c push_swap.h
 	cc $(CFLAGS) -c $< -o $@
 
-bonus: $(BNS)
-	cc $(LIBFT) $(CFLAGS) -o $(NBNS) $(OBJ)
-
-$(LIBFT):
-	make -C libft
-
 clean:
-	make -C libft clean
 	rm -f $(OBJ)
 
-fclean:
-	make -C libft fclean
+fclean: clean
 	rm -f $(NAME)
-	rm -f $(OBJ)
 
 re: fclean all
 

@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 14:18:03 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/24 20:47:22 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/29 14:04:13 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	a_five(t_stack **a, t_stack **b)
 	t_stack	*tmp;
 	t_stack	*zid;
 
+	if (is_sorted(a))
+		return ;
 	tmp = *a;
 	zid = (*a)->next;
 	while (zid)

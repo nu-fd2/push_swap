@@ -6,11 +6,11 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 05:22:13 by oel-mado          #+#    #+#             */
-/*   Updated: 2024/11/15 15:52:39 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/29 14:46:18 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t n)
 {

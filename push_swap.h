@@ -6,14 +6,15 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 15:45:36 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/25 16:03:27 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/29 14:45:43 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "libft/libft.h"
+# include <unistd.h>
+# include <stdlib.h>
 # include <stdbool.h>
 
 typedef struct s_stack
@@ -25,6 +26,18 @@ typedef struct s_stack
 	struct s_stack	*next;
 	struct s_stack	*prev;
 }					t_stack;
+
+// libft
+
+void	*ft_memset(void *ptr, int n, size_t num);
+void	*ft_calloc(size_t count, size_t size);
+void	ft_bzero(void *s, size_t len);
+char	*ft_itoa(int n);
+void	ft_putstr_fd(char *s, int fd);
+char	*ft_strdup(const char *s1);
+void	ft_putchar_fd(char c, int fd);
+size_t	ft_strlcpy(char *dst, const char *src, size_t n);
+size_t	ft_strlen(const char *who);
 
 // stk
 
@@ -42,6 +55,7 @@ void	is_error(void);
 bool	is_number(char *arg);
 int		is_it_good(char **arg);
 int		is_multi_arg(char *arg);
+bool	is_sorted(t_stack **head);
 
 //src
 

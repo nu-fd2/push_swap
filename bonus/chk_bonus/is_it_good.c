@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   is_it_good.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/24 18:55:02 by oel-mado          #+#    #+#             */
-/*   Updated: 2024/11/14 20:02:58 by oel-mado         ###   ########.fr       */
+/*   Created: 2025/02/03 18:13:25 by oel-mado          #+#    #+#             */
+/*   Updated: 2025/03/24 20:49:31 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+int	is_it_good(char **arg)
 {
-	size_t				i;
-	unsigned char		*d;
-	const unsigned char	*s;
+	int	i;
+	int	tmp;
 
-	i = 0;
-	d = dst;
-	s = src;
-	if (!dst && !src)
-		return (dst);
-	while (n > i)
+	i = 1;
+	tmp = 0;
+	while (arg[i])
 	{
-		d[i] = s[i];
+		is_number(arg[i]);
+		tmp = tmp + is_multi_arg(arg[i]) - 1;
 		i++;
 	}
-	return (dst);
+	i += tmp;
+	return (i);
 }

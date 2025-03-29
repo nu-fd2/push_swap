@@ -1,19 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   is_sorted.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/24 16:02:07 by oel-mado          #+#    #+#             */
-/*   Updated: 2024/11/09 13:11:54 by oel-mado         ###   ########.fr       */
+/*   Created: 2025/03/28 11:27:55 by oel-mado          #+#    #+#             */
+/*   Updated: 2025/03/29 12:41:09 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
-int	ft_isalnum(int c)
+bool	is_sorted(t_stack **head)
 {
-	return ((c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z')
-		|| (c >= 'a' && c <= 'z'));
+	t_stack	*t;
+	long	tmp;
+
+	t = *head;
+	tmp = -2;
+	while (t)
+	{
+		if (t->index < tmp)
+			return (0);
+		tmp = t->index;
+		t = t->next;
+	}
+	return (1);
 }

@@ -6,11 +6,11 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 01:49:31 by oel-mado          #+#    #+#             */
-/*   Updated: 2024/11/09 12:46:37 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/29 14:46:12 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
 void	ft_putstr_fd(char *s, int fd)
 {

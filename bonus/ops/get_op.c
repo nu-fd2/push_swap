@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   a_four.c                                           :+:      :+:    :+:   */
+/*   get_op.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/24 09:03:51 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/30 11:10:48 by oel-mado         ###   ########.fr       */
+/*   Created: 2025/03/30 10:55:03 by oel-mado          #+#    #+#             */
+/*   Updated: 2025/03/30 11:14:14 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../push_swap_bonus.h"
 
-void	a_four(t_stack **a, t_stack **b, bool ss)
+void	get_op(t_stack **a, t_stack **b)
 {
-	t_stack	*tmp;
+	char	*op;
 
-	tmp = *a;
-	if (is_sorted(a))
-		return ;
-	if ((tmp->next)->index == ss)
-		sa(a);
-	else if (((tmp->next)->next)->index == ss)
-		(ra(a), ra(a));
-	else if ((tmp->prev)->index == ss)
-		rra(a);
-	pb(a, b);
-	a_three(a);
-	pa(a, b);
+	op = get_next_line(0);
+	while (op)
+	{
+		do_op(a, b, op);
+		free(op);
+		op = get_next_line(0);
+	}
 }

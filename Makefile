@@ -6,7 +6,7 @@
 #    By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/24 21:12:48 by oel-mado          #+#    #+#              #
-#    Updated: 2025/03/29 22:30:10 by oel-mado         ###   ########.fr        #
+#    Updated: 2025/03/30 11:00:43 by oel-mado         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -120,6 +120,11 @@ BSRC = bonus/checker.c\
 	bonus/get_next_line/get_next_line_bonus.c\
 	bonus/get_next_line/get_next_line_utils_bonus.c\
 	\
+	bonus/ops/do_op.c\
+	bonus/ops/get_op.c\
+	bonus/ops/in_swap.c\
+	bonus/ops/in_push.c\
+	bonus/ops/in_rotate.c\
 	\
 
 OBJ = $(SRC:.c=.o)

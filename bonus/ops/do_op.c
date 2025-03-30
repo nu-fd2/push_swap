@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   a_four.c                                           :+:      :+:    :+:   */
+/*   do_op.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/24 09:03:51 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/30 11:10:48 by oel-mado         ###   ########.fr       */
+/*   Created: 2025/03/30 10:54:15 by oel-mado          #+#    #+#             */
+/*   Updated: 2025/03/30 10:54:33 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../push_swap_bonus.h"
 
-void	a_four(t_stack **a, t_stack **b, bool ss)
+void	do_op(t_stack **a, t_stack **b, char *op)
 {
-	t_stack	*tmp;
-
-	tmp = *a;
-	if (is_sorted(a))
-		return ;
-	if ((tmp->next)->index == ss)
-		sa(a);
-	else if (((tmp->next)->next)->index == ss)
-		(ra(a), ra(a));
-	else if ((tmp->prev)->index == ss)
-		rra(a);
-	pb(a, b);
-	a_three(a);
-	pa(a, b);
+	if (op[0] == 'p')
+		in_push(a, b, op);
+	else if (op[0] == 's')
+		in_swap(a, b, op);
+	else if (op[0] == 'r')
+		in_rotate(a, b, op);
 }

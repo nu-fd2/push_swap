@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 15:45:36 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/29 22:31:12 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/03/30 10:58:08 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,5 +83,13 @@ void	rrr(t_stack **a, t_stack **b);
 // algo
 
 void	a_index(t_stack **a, int size);
+
+// ops
+
+void	get_op(t_stack **a, t_stack **b);
+void	do_op(t_stack **a, t_stack **b, char *op);
+void	in_push(t_stack **a, t_stack **b, char *op);
+void	in_swap(t_stack **a, t_stack **b, char *op);
+void	in_rotate(t_stack **a, t_stack **b, char *op);
 
 #endif // PUSH_SWAP_BONUS_H

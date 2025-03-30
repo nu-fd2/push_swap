@@ -1,41 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   s_atoi.c                                           :+:      :+:    :+:   */
+/*   ft_putstr_fd_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/25 18:10:01 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/29 21:00:32 by oel-mado         ###   ########.fr       */
+/*   Created: 2024/10/30 01:49:31 by oel-mado          #+#    #+#             */
+/*   Updated: 2025/03/29 21:02:04 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../push_swap_bonus.h"
 
-long	s_atoi(const char *str)
+void	ft_putstr_fd(char *s, int fd)
 {
-	int		i;
-	int		sg;
-	long	nb;
+	int	i;
 
 	i = 0;
-	sg = 1;
-	nb = 0;
-	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
-		i++;
-	if (str[i] == '-' || str[i] == '+')
+	if (!s)
+		return ;
+	while (s[i])
 	{
-		if (str[i] == '-')
-			sg = -sg;
+		ft_putchar_fd(s[i], fd);
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		nb = (nb * 10) + (str[i] - 48);
-		if ((nb * sg) < -2147483648 || (nb * sg) > 2147483647)
-			return (696969696969);
-		i++;
-	}
-	nb *= sg;
-	return (nb);
 }

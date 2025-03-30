@@ -1,41 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   s_atoi.c                                           :+:      :+:    :+:   */
+/*   is_multi_arg_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/25 18:10:01 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/29 21:00:32 by oel-mado         ###   ########.fr       */
+/*   Created: 2025/02/24 01:02:00 by oel-mado          #+#    #+#             */
+/*   Updated: 2025/03/29 21:01:28 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../push_swap_bonus.h"
 
-long	s_atoi(const char *str)
+int	is_multi_arg(char *arg)
 {
 	int		i;
-	int		sg;
-	long	nb;
+	int		nb;
+	bool	s;
 
 	i = 0;
-	sg = 1;
+	s = 0;
 	nb = 0;
-	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
-		i++;
-	if (str[i] == '-' || str[i] == '+')
+	while (arg[i])
 	{
-		if (str[i] == '-')
-			sg = -sg;
+		if (arg[i] >= '0' && arg[i] <= '9')
+		{
+			if (s == 0)
+			{
+				nb++;
+				s = 1;
+			}
+		}
+		else
+			s = 0;
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		nb = (nb * 10) + (str[i] - 48);
-		if ((nb * sg) < -2147483648 || (nb * sg) > 2147483647)
-			return (696969696969);
-		i++;
-	}
-	nb *= sg;
 	return (nb);
 }

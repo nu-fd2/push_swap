@@ -1,41 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   s_atoi.c                                           :+:      :+:    :+:   */
+/*   ft_strlcpy_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/25 18:10:01 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/29 21:00:32 by oel-mado         ###   ########.fr       */
+/*   Created: 2024/10/26 05:22:13 by oel-mado          #+#    #+#             */
+/*   Updated: 2025/03/29 21:02:09 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../push_swap_bonus.h"
 
-long	s_atoi(const char *str)
+size_t	ft_strlcpy(char *dst, const char *src, size_t n)
 {
-	int		i;
-	int		sg;
-	long	nb;
+	size_t	i;
 
 	i = 0;
-	sg = 1;
-	nb = 0;
-	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
-		i++;
-	if (str[i] == '-' || str[i] == '+')
+	if (n == 0)
+		return (ft_strlen(src));
+	while (src[i] && i + 1 < n)
 	{
-		if (str[i] == '-')
-			sg = -sg;
+		dst[i] = src[i];
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		nb = (nb * 10) + (str[i] - 48);
-		if ((nb * sg) < -2147483648 || (nb * sg) > 2147483647)
-			return (696969696969);
-		i++;
-	}
-	nb *= sg;
-	return (nb);
+	if (n > 0)
+		dst[i] = '\0';
+	return (ft_strlen(src));
 }

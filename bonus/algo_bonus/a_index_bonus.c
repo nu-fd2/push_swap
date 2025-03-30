@@ -1,41 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   s_atoi.c                                           :+:      :+:    :+:   */
+/*   a_index_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/25 18:10:01 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/29 21:00:32 by oel-mado         ###   ########.fr       */
+/*   Created: 2025/03/24 10:18:21 by oel-mado          #+#    #+#             */
+/*   Updated: 2025/03/29 21:17:56 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../push_swap_bonus.h"
 
-long	s_atoi(const char *str)
+void	a_index(t_stack **a, int size)
 {
 	int		i;
-	int		sg;
-	long	nb;
+	t_stack	*in;
+	t_stack	*tmp;
 
 	i = 0;
-	sg = 1;
-	nb = 0;
-	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
-		i++;
-	if (str[i] == '-' || str[i] == '+')
+	while (i < size)
 	{
-		if (str[i] == '-')
-			sg = -sg;
-		i++;
+		in = *a;
+		while (in && in->index != -1)
+			in = in->next;
+		tmp = *a;
+		while (tmp)
+		{
+			if (tmp->index == -1)
+			{
+				if (in->data > tmp->data)
+					in = tmp;
+			}
+			tmp = tmp->next;
+		}
+		if (in)
+			in->index = i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		nb = (nb * 10) + (str[i] - 48);
-		if ((nb * sg) < -2147483648 || (nb * sg) > 2147483647)
-			return (696969696969);
-		i++;
-	}
-	nb *= sg;
-	return (nb);
 }

@@ -6,12 +6,14 @@
 #    By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/24 21:12:48 by oel-mado          #+#    #+#              #
-#    Updated: 2025/03/29 14:45:19 by oel-mado         ###   ########.fr        #
+#    Updated: 2025/03/29 22:30:10 by oel-mado         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME = push_swap
+
+BNS = checker
 
 CFLAGS = -Wall -Wextra -Werror
 
@@ -69,22 +71,80 @@ SRC = push_swap.c\
 	\
 	\
 
+BSRC = bonus/checker.c\
+	\
+	bonus/chk_bonus/is_error_bonus.c\
+	bonus/chk_bonus/is_it_good_bonus.c\
+	bonus/chk_bonus/is_multi_arg_bonus.c\
+	bonus/chk_bonus/is_number_bonus.c\
+	bonus/chk_bonus/is_sorted_bonus.c\
+	\
+	bonus/stk_bonus/s_data_bonus.c\
+	bonus/stk_bonus/s_make_a_bonus.c\
+	bonus/stk_bonus/s_one_bonus.c\
+	bonus/stk_bonus/s_put_bonus.c\
+	bonus/stk_bonus/s_atoi_bonus.c\
+	bonus/stk_bonus/s_free_bonus.c\
+	bonus/stk_bonus/s_make_empty_bonus.c\
+	\
+	bonus/mvs_bonus/src/push_bonus.c\
+	bonus/mvs_bonus/src/swap_bonus.c\
+	bonus/mvs_bonus/src/rotate_bonus.c\
+	bonus/mvs_bonus/src/reverse_rotate_bonus.c\
+	bonus/mvs_bonus/src/last_bonus.c\
+	\
+	bonus/mvs_bonus/ss_bonus.c\
+	bonus/mvs_bonus/rr_bonus.c\
+	bonus/mvs_bonus/rrr_bonus.c\
+	bonus/mvs_bonus/pa_bonus.c\
+	bonus/mvs_bonus/pb_bonus.c\
+	bonus/mvs_bonus/sa_bonus.c\
+	bonus/mvs_bonus/sb_bonus.c\
+	bonus/mvs_bonus/ra_bonus.c\
+	bonus/mvs_bonus/rb_bonus.c\
+	bonus/mvs_bonus/rra_bonus.c\
+	bonus/mvs_bonus/rrb_bonus.c\
+	\
+	bonus/algo_bonus/a_index_bonus.c\
+	\
+	bonus/libft_bonus/ft_calloc_bonus.c\
+	bonus/libft_bonus/ft_bzero_bonus.c\
+	bonus/libft_bonus/ft_memset_bonus.c\
+	bonus/libft_bonus/ft_itoa_bonus.c\
+	bonus/libft_bonus/ft_putstr_fd_bonus.c\
+	bonus/libft_bonus/ft_strdup_bonus.c\
+	bonus/libft_bonus/ft_putchar_fd_bonus.c\
+	bonus/libft_bonus/ft_strlen_bonus.c\
+	bonus/libft_bonus/ft_strlcpy_bonus.c\
+	\
+	bonus/get_next_line/get_next_line_bonus.c\
+	bonus/get_next_line/get_next_line_utils_bonus.c\
+	\
+	\
+
 OBJ = $(SRC:.c=.o)
+
+BOBJ = $(BSRC:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+bonus: $(BNS)
+
+$(NAME): $(OBJ) push_swap.h
 	cc $(CFLAGS) $(OBJ) -o $(NAME)
 
-%.o: %.c push_swap.h
+$(BNS): $(BOBJ) bonus/push_swap_bonus.h
+	cc $(CFLAGS) $(BOBJ) -o $(BNS)
+
+%.o: %.c
 	cc $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ)
+	@rm -f $(OBJ) $(BOBJ)
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME) $(BNS)
 
-re: fclean all
+re: fclean all bonus
 
 .PHONY: all clean fclean re bonus

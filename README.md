@@ -1,5 +1,11 @@
 # push_swap
 
+just run make for push_swap
+and make bonus for checker_vis
+you can do ./push_swap args | ./checker same args (or you'll get an error)
+or ./checker_vis args to sort it yourself (pa pb sa sb ss ra rb rr rra rrb rrr)
+
+
 ```
  _           _       _                   
 | |         | |     (_)                  

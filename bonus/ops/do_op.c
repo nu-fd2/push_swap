@@ -19,7 +19,13 @@ void	do_op(t_stack **a, t_stack **b, char *op)
 	else if (op[0] == 's')
 		in_swap(a, b, op);
 	else if (op[0] == 'r')
+  {
+    if ((op[1] == 'a' || op[2] == 'a') && ((*a)->next)->is_null)
+      return ;
+    if ((op[1] == 'b' || op[2] == 'b') && ((*b)->next)->is_null)
+      return ;
 		in_rotate(a, b, op);
+  }
   else if (op[0] == '\n')
     return ;
 	else

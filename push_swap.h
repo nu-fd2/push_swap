@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdbool.h>
+# include <stdint.h>
 
 typedef struct s_stack
 {
@@ -89,6 +90,5 @@ void	a_index(t_stack **a, int size);
 void	a_atob(t_stack **a, t_stack **b, int size);
 void	a_btoa(t_stack **a, t_stack **b, int size);
 
-void	s_stack(t_stack **head);
-
 #endif // PUSH_SWAP_H
+

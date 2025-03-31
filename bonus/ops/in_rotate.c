@@ -14,19 +14,21 @@
 
 void	in_rotate(t_stack **a, t_stack **b, char *op)
 {
-	if (op[1] == 'a')
+	if (op[1] == 'a' && op[2] == '\n')
 		ra(a);
-	else if (op[1] == 'b')
+	else if (op[1] == 'b' && op[2] == '\n')
 		rb(b);
 	else if (op[1] == 'r')
 	{
-		if (op[2] == 'a')
+		if (op[2] == 'a' && op[3] == '\n')
 			rra(a);
-		else if (op[2] == 'b')
+		else if (op[2] == 'b' && op[3] == '\n')
 			rrb(b);
-		else if (op[2] == 'r')
+		else if (op[2] == 'r' && op[3] == '\n')
 			rrr(a, b);
-		else
+		else if (op[2] == '\n')
 			rr(a, b);
 	}
+	else
+		is_error();
 }

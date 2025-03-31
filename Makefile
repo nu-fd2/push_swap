@@ -17,7 +17,8 @@ BNS = checker
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRC = push_swap.c\
+SRC = \
+	push_swap.c\
 	\
 	chk/is_error.c\
 	chk/is_it_good.c\
@@ -71,7 +72,8 @@ SRC = push_swap.c\
 	\
 	\
 
-BSRC = bonus/checker.c\
+BSRC = \
+	bonus/checker.c\
 	\
 	bonus/chk_bonus/is_error_bonus.c\
 	bonus/chk_bonus/is_it_good_bonus.c\

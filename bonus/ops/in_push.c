@@ -14,8 +14,10 @@
 
 void	in_push(t_stack **a, t_stack **b, char *op)
 {
-	if (op[1] == 'a')
+	if (op[1] == 'a' && op[2] == '\n')
 		pa(a, b);
-	else if (op[1] == 'b')
+	else if (op[1] == 'b' && op[2] == '\n')
 		pb(a, b);
+	else
+		is_error();
 }

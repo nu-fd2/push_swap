@@ -49,6 +49,7 @@ t_stack	*s_make_empty(int size, bool is_null);
 t_stack	*s_make_a(char **args, int size);
 t_stack	*s_one(int data, bool is_null, bool is_head);
 t_stack	*s_put(long *arr, t_stack *node, int size);
+void    s_print_stack(t_stack **head, bool s);
 
 // chk
 

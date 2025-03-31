@@ -20,6 +20,8 @@ void	do_op(t_stack **a, t_stack **b, char *op)
 		in_swap(a, b, op);
 	else if (op[0] == 'r')
 		in_rotate(a, b, op);
+  else if (op[0] == '\n')
+    return ;
 	else
 		is_error();
 }

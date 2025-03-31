@@ -88,6 +88,7 @@ BSRC = \
 	bonus/stk_bonus/s_atoi_bonus.c\
 	bonus/stk_bonus/s_free_bonus.c\
 	bonus/stk_bonus/s_make_empty_bonus.c\
+	bonus/stk_bonus/s_print_stack_bonus.c\
 	\
 	bonus/mvs_bonus/src/push_bonus.c\
 	bonus/mvs_bonus/src/swap_bonus.c\

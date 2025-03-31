@@ -22,7 +22,11 @@ int	main(int ac, char **av)
 	a = s_make_a(&av[1], size);
 	b = s_make_empty(size, 1);
 	a_index(&a, size);
+  s_print_stack(&a, 0);
 	get_op(&a, &b);
+  s_print_stack(&a, 0);
+  if (!(b->is_null))
+    s_print_stack(&b, 1);
 	if (is_sorted(&a) && b->is_null)
 		write(1, "\033[1;32mOK\033[0m\n", 14);
 	else
@@ -32,3 +36,4 @@ int	main(int ac, char **av)
 	ac--;
 	return (0);
 }
+

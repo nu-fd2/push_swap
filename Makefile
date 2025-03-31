@@ -13,7 +13,7 @@
 
 NAME = push_swap
 
-BNS = checker
+BNS = vis_checker
 
 CFLAGS = -Wall -Wextra -Werror
 
@@ -73,7 +73,7 @@ SRC = \
 	\
 
 BSRC = \
-	bonus/checker.c\
+	bonus/vis_checker.c\
 	\
 	bonus/chk_bonus/is_error_bonus.c\
 	bonus/chk_bonus/is_it_good_bonus.c\

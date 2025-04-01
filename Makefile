@@ -6,7 +6,7 @@
 #    By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/24 21:12:48 by oel-mado          #+#    #+#              #
-#    Updated: 2025/03/30 11:00:43 by oel-mado         ###   ########.fr        #
+#    Updated: 2025/04/01 16:41:38 by oel-mado         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -147,11 +147,11 @@ $(BNS): $(BOBJ) bonus/push_swap_bonus.h
 	cc $(CFLAGS) -c $< -o $@
 
 clean:
-	@rm -f $(OBJ) $(BOBJ)
+	rm -f $(OBJ) $(BOBJ)
 
 fclean: clean
-	@rm -f $(NAME) $(BNS)
+	rm -f $(NAME) $(BNS)
 
-re: fclean all bonus
+re: fclean all
 
 .PHONY: all clean fclean re bonus

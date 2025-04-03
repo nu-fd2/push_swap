@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 15:45:31 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/30 11:11:17 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/04/03 17:42:59 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ int	main(int ac, char **av)
 	t_stack	*a;
 	t_stack	*b;
 
+	if (ac == 1)
+		return (0);
 	size = is_it_good(av) - 1;
 	a = s_make_a(&av[1], size);
 	b = s_make_empty(size, 1);

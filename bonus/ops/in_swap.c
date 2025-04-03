@@ -21,5 +21,10 @@ void	in_swap(t_stack **a, t_stack **b, char *op)
 	else if (op[1] == 's' && op[2] == '\n')
 		ss(a, b);
 	else
+	{
+		free(op);
+		s_free(*a);
+		s_free(*b);
 		is_error();
+	}
 }

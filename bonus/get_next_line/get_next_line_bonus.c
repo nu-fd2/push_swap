@@ -103,5 +103,5 @@ char	*get_next_line(int fd)
 	if (!lain)
 		return (free(buff[i]), buff[i] = NULL, NULL);
 	buff[i] = updtt(buff[i]);
-	return (lain); 
+	return (lain);
 }

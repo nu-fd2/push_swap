@@ -30,5 +30,10 @@ void	in_rotate(t_stack **a, t_stack **b, char *op)
 			(do_op(a, b, "ra\n"), do_op(a, b, "rb\n"));
 	}
 	else
+	{
+		free(op);
+		s_free(*a);
+		s_free(*b);
 		is_error();
+	}
 }

@@ -19,7 +19,7 @@ t_stack	*s_one(int data, bool is_null, bool is_head)
 	new = ft_calloc(sizeof(t_stack), 1);
 	if (!new)
 		return (NULL);
-	new->index = -1; 
+	new->index = -1;
 	new->data = data;
 	new->is_null = is_null;
 	new->is_head = is_head;

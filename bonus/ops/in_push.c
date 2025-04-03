@@ -29,5 +29,10 @@ void	in_push(t_stack **a, t_stack **b, char *op)
 			pb(a, b);
 	}
 	else
+	{
+		free(op);
+		s_free(*a);
+		s_free(*b);
 		is_error();
+	}
 }

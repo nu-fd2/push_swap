@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 18:40:34 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/03/29 21:01:31 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/04/05 21:55:16 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ bool	skip(char *arg, int i)
 	if (arg[i] == '-' || arg[i] == '+')
 	{
 		i++;
-		if (arg[i] == '-' || arg[i] == '+')
+		if (arg[i] == '-' || arg[i] == '+' || arg[i] == '\0')
 			is_error();
 		if (arg[i] == ' ' || (arg[i] >= 9 && arg[i] <= 13))
 			is_error();
@@ -71,7 +71,7 @@ bool	is_number(char *arg)
 		is_error();
 	while (arg[i])
 	{
-		if (first_skip(arg, i++))
+		if (first_skip(arg, i))
 			is_error();
 		while (arg[i] == '-' || arg[i] == '+')
 			i++;

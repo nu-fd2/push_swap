@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 15:45:31 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/04/03 17:42:59 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/04/10 08:18:16 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	fun(t_stack **a, t_stack **b, int size)
 	else if (size == 3)
 		a_three(a);
 	else if (size == 4)
-		a_four(a, b, 0);
+		a_four(a, b);
 	else if (size == 5)
 		a_five(a, b);
 	else

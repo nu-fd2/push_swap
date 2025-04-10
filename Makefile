@@ -6,7 +6,7 @@
 #    By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/24 21:12:48 by oel-mado          #+#    #+#              #
-#    Updated: 2025/04/01 16:41:38 by oel-mado         ###   ########.fr        #
+#    Updated: 2025/04/10 08:12:17 by oel-mado         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,6 +59,7 @@ SRC = \
 	algo/a_index.c\
 	algo/a_atob.c\
 	algo/a_btoa.c\
+	algo/a_small.c\
 	\
 	libft/ft_calloc.c\
 	libft/ft_bzero.c\
